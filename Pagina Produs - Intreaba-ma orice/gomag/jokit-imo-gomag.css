@@ -1,0 +1,2188 @@
+/**
+ * ============================================
+ * JOKIT - ÎNTREABĂ-MĂ ORICE
+ * Stiluri CSS pentru Gomag - Stil Premium
+ * ============================================
+ * 
+ * INSTRUCȚIUNI:
+ * Adaugă acest cod în Design → Editor CSS din panoul Gomag
+ * SAU încarcă-l ca fișier extern
+ */
+
+/* ============================================
+   CSS VARIABILE
+   ============================================ */
+:root {
+    --jokit-imo-primary: #E74C3C;
+    --jokit-imo-primary-dark: #C0392B;
+    --jokit-imo-secondary: #2C3E50;
+    --jokit-imo-secondary-light: #34495E;
+    --jokit-imo-accent: #FFC107;
+    --jokit-imo-accent-dark: #FFA000;
+    --jokit-imo-success: #27AE60;
+    --jokit-imo-text: #2C3E50;
+    --jokit-imo-text-light: #7F8C8D;
+    --jokit-imo-white: #FFFFFF;
+    --jokit-imo-bg-light: #FDF5E6;
+    --jokit-imo-bg-warm: #FFF8F0;
+    --jokit-imo-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --jokit-imo-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --jokit-imo-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+    --jokit-imo-radius-sm: 8px;
+    --jokit-imo-radius-md: 12px;
+    --jokit-imo-radius-lg: 20px;
+    --jokit-imo-transition: 0.3s ease;
+}
+
+/* ============================================
+   ASCUNDERE ELEMENTE GOMAG DEFAULT
+   ============================================ */
+.jokit-imo-active .product-gallery,
+.jokit-imo-active .product-images,
+.jokit-imo-active .product-info .product-name,
+.jokit-imo-active .product-info .product-price-box,
+.jokit-imo-active .product-info .product-short-description,
+.jokit-imo-active .product-info .add-to-cart-box,
+.jokit-imo-active .product-tabs,
+.jokit-imo-active .related-products,
+.jokit-imo-active .product-attributes {
+    display: none !important;
+}
+
+.jokit-imo-active .product-info {
+    max-width: 100%;
+    width: 100%;
+    float: none;
+}
+
+.jokit-imo-active .product-page-content {
+    display: block;
+    width: 100%;
+}
+
+/* ============================================
+   CONTAINER PRINCIPAL
+   ============================================ */
+.jokit-imo-wrapper {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    line-height: 1.6;
+    color: var(--jokit-imo-text);
+}
+
+/* ============================================
+   HEADER - IDENTIC CU LIBERTATEA FINANCIARĂ
+   ============================================ */
+.jokit-imo-header {
+    position: relative;
+    z-index: 100;
+    padding: 15px 0;
+}
+
+.jokit-imo-header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.jokit-imo-header__logo img {
+    height: 50px;
+    width: auto;
+}
+
+.jokit-imo-header__nav {
+    display: flex;
+    gap: 30px;
+}
+
+.jokit-imo-header__nav-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.jokit-imo-header__nav-link:hover {
+    color: #FFD700;
+}
+
+.jokit-imo-header__nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #FFD700;
+    transition: width 0.3s ease;
+}
+
+.jokit-imo-header__nav-link:hover::after {
+    width: 100%;
+}
+
+.jokit-imo-header__icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.jokit-imo-header__icon {
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jokit-imo-header__icon:hover {
+    color: #FFD700;
+}
+
+.jokit-imo-header__icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.jokit-imo-header__cart {
+    position: relative;
+}
+
+.jokit-imo-header__cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #FFD700;
+    color: #1A1A2E;
+    font-size: 11px;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header responsive */
+@media (max-width: 768px) {
+    .jokit-imo-header__nav {
+        display: none;
+    }
+    
+    .jokit-imo-header__logo img {
+        height: 40px;
+    }
+}
+
+/* ============================================
+   HERO WRAPPER WITH BACKGROUND
+   ============================================ */
+.jokit-imo-hero-wrapper {
+    background: linear-gradient(90deg, #00ffed 0%, #00b8ba 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.jokit-imo-hero-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 40%);
+    z-index: 0;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.jokit-imo-hero {
+    padding: 60px 20px 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.jokit-imo-hero__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Hero - Imaginea Produsului */
+.jokit-imo-hero__product-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Efect auriu în spate - strălucire principală */
+.jokit-imo-hero__product-image::before {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background: radial-gradient(ellipse, rgba(255, 215, 0, 0.6) 0%, rgba(255, 193, 7, 0.3) 40%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(50px);
+    animation: jokitGlow 3s ease-in-out infinite;
+    z-index: 0;
+}
+
+/* Efect secundar - aureolă exterioară */
+.jokit-imo-hero__product-image::after {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    background: radial-gradient(ellipse, rgba(255, 215, 0, 0.25) 0%, rgba(255, 193, 7, 0.1) 50%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: jokitGlowOuter 4s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes jokitGlow {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.08); }
+}
+
+@keyframes jokitGlowOuter {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.jokit-imo-hero__product-image > img {
+    max-width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5)) 
+            drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3))
+            drop-shadow(0 0 60px rgba(255, 215, 0, 0.2));
+    position: relative;
+    z-index: 1;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    animation: floatGently 4s ease-in-out infinite;
+}
+
+@keyframes floatGently {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.jokit-imo-hero__product-image:hover > img {
+    transform: scale(1.03) rotate(-2deg);
+    animation-play-state: paused;
+}
+
+/* Imaginea secundară pentru pachet */
+.jokit-imo-hero__secondary-product {
+    position: absolute;
+    max-width: 30%;
+    max-height: 180px;
+    object-fit: contain;
+    right: -20px;
+    bottom: 20px;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    z-index: 2;
+    transform: rotate(8deg);
+    transition: transform 0.4s ease;
+    animation: floatGentlySecondary 4s ease-in-out infinite;
+}
+
+@keyframes floatGentlySecondary {
+    0%, 100% { transform: rotate(8deg) translateY(0px); }
+    50% { transform: rotate(8deg) translateY(-5px); }
+}
+
+.jokit-imo-hero__product-image:hover .jokit-imo-hero__secondary-product {
+    transform: rotate(5deg) scale(1.05);
+}
+
+.jokit-imo-hero__main-product {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero - Badge Preț */
+.jokit-imo-hero__price-badge-full {
+    position: absolute;
+    bottom: 20px;
+    right: -10px;
+    background: linear-gradient(145deg, #E74C3C 0%, #C0392B 100%);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.5);
+    transform: rotate(-3deg);
+    z-index: 10;
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% { transform: rotate(-3deg) scale(1); }
+    50% { transform: rotate(-3deg) scale(1.03); }
+}
+
+.jokit-imo-hero__badge-old {
+    font-size: 14px;
+    text-decoration: line-through;
+    opacity: 0.7;
+    display: block;
+    text-align: center;
+}
+
+.jokit-imo-hero__badge-main {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+}
+
+.jokit-imo-hero__badge-value {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.jokit-imo-hero__badge-currency {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.jokit-imo-hero__badge-um {
+    font-size: 12px;
+    display: block;
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* Hero - Content */
+.jokit-imo-hero__content {
+    color: white;
+}
+
+.jokit-imo-hero__title {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 20px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.jokit-imo-hero__title-main {
+    display: block;
+    color: var(--jokit-imo-accent);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.jokit-imo-hero__title-sub {
+    display: block;
+    font-size: clamp(20px, 3vw, 32px);
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 10px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.jokit-imo-hero__description {
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 30px;
+    max-width: 500px;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Hero - CTA Area */
+.jokit-imo-hero__cta-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.jokit-imo-hero__add-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.jokit-imo-hero__qty-regulator {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    margin-right: 15px;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(255, 165, 0, 0.15));
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    border-radius: 50px;
+    padding: 8px 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.jokit-imo-hero__qty-btn {
+    width: 44px !important;
+    height: 44px !important;
+    background: linear-gradient(135deg, #FFD700, #FFA500) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    color: #1A1A2E !important;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none;
+}
+
+.jokit-imo-hero__qty-btn:hover {
+    background: linear-gradient(135deg, #FFE44D, #FFD700) !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+.jokit-imo-hero__qty-btn:active {
+    transform: scale(0.95) !important;
+}
+
+.jokit-imo-hero__qty-btn svg {
+    stroke-width: 3 !important;
+}
+
+.jokit-imo-hero__qty-input {
+    width: 50px !important;
+    height: 44px !important;
+    text-align: center !important;
+    background: transparent !important;
+    border: none !important;
+    color: #1A1A2E !important;
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.jokit-imo-hero__add-to-cart {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--jokit-imo-accent);
+    color: var(--jokit-imo-secondary);
+    padding: 16px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.jokit-imo-hero__add-to-cart:hover {
+    background: var(--jokit-imo-accent-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 193, 7, 0.4);
+}
+
+.jokit-imo-hero__add-to-cart svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Hero Wave Separator */
+.jokit-imo-hero__wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 120px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.jokit-imo-hero__wave svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ============================================
+   PURCHASE OPTIONS (Radio Style)
+   ============================================ */
+.jokit-imo-purchase-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+    margin-bottom: 20px;
+}
+
+.jokit-imo-purchase-option {
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 14px;
+    padding-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    opacity: 0.7;
+    overflow: visible;
+    margin-top: 12px;
+}
+
+.jokit-imo-purchase-option:hover {
+    border-color: rgba(255, 215, 0, 0.5);
+    background: rgba(255, 215, 0, 0.08);
+    opacity: 0.9;
+}
+
+.jokit-imo-purchase-option.selected {
+    border-color: #FFD700;
+    background: rgba(255, 215, 0, 0.2);
+    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.35), 0 4px 15px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+.jokit-imo-purchase-option__badge {
+    position: absolute;
+    top: -12px;
+    right: 12px;
+    background: #28a745;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.jokit-imo-purchase-option__badge--best {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #1A1A2E;
+}
+
+/* Shine effect pentru Best Value - doar pe pachet */
+.jokit-imo-purchase-option[data-option="pachet"]::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    background: linear-gradient(
+        110deg,
+        transparent 0%,
+        transparent 40%,
+        rgba(255, 215, 0, 0.3) 50%,
+        transparent 60%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shineIMO 2.5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes shineIMO {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.jokit-imo-purchase-option__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.jokit-imo-purchase-option__radio {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.jokit-imo-purchase-option:hover .jokit-imo-purchase-option__radio {
+    border-color: rgba(255, 215, 0, 0.6);
+    transform: scale(1.1);
+}
+
+.jokit-imo-purchase-option.selected .jokit-imo-purchase-option__radio {
+    border-color: #FFD700;
+    background: #FFD700;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.jokit-imo-purchase-option.selected .jokit-imo-purchase-option__radio::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #1A1A2E;
+    border-radius: 50%;
+    animation: radioPopInIMO 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes radioPopInIMO {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+.jokit-imo-purchase-option__title {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    line-height: 1.3;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.jokit-imo-purchase-option__pricing {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding-left: 28px;
+}
+
+.jokit-imo-purchase-option__old-price {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: line-through;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.jokit-imo-purchase-option__new-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFD700;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.jokit-imo-purchase-option__discount {
+    background: #FF6B35;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.jokit-imo-purchase-option__savings {
+    width: 100%;
+    padding-left: 28px;
+    font-size: 11px;
+    color: white;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* CTA Row - în hero content */
+.jokit-imo-hero__cta-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.jokit-imo-hero__cta-row--centered {
+    justify-content: center;
+}
+
+.jokit-imo-purchase-divider {
+    display: none;
+}
+
+/* Responsive pentru purchase options */
+@media (max-width: 992px) {
+    .jokit-imo-purchase-options {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .jokit-imo-purchase-option {
+        background: rgba(0, 0, 0, 0.3);
+        border: 2px solid rgba(0, 255, 237, 0.4);
+        backdrop-filter: blur(10px);
+    }
+    
+    .jokit-imo-purchase-option.selected {
+        background: rgba(0, 0, 0, 0.4);
+        border-color: #00ffed;
+    }
+    
+    .jokit-imo-purchase-option__title {
+        font-size: 14px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    
+    .jokit-imo-purchase-option__new-price {
+        font-size: 18px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    }
+    
+    .jokit-imo-purchase-option__old-price {
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    }
+    
+    .jokit-imo-purchase-option__savings {
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    }
+    
+    /* CTA Row centrat pe mobil */
+    .jokit-imo-hero__cta-row--centered {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .jokit-imo-hero__qty-regulator {
+        margin-right: 0;
+    }
+    
+    .jokit-imo-hero__add-to-cart {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+}
+
+/* Responsive pentru bundle offer */
+@media (max-width: 576px) {
+    .jokit-imo-hero__bundle-offer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .jokit-imo-hero__bundle-link {
+        margin-left: 0;
+    }
+}
+
+/* ============================================
+   MAIN BACKGROUND
+   ============================================ */
+.jokit-imo-main-bg {
+    background: var(--jokit-imo-bg-warm);
+}
+
+/* ============================================
+   GALERIE PRODUS
+   ============================================ */
+.jokit-imo-gallery {
+    padding: 60px 20px;
+    background: var(--jokit-imo-bg-light);
+}
+
+.jokit-imo-gallery__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.jokit-imo-gallery__title {
+    text-align: center;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700;
+    color: var(--jokit-imo-secondary);
+    margin: 0 0 40px;
+}
+
+.jokit-imo-gallery__carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.jokit-imo-gallery__arrow {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: var(--jokit-imo-shadow-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.jokit-imo-gallery__arrow:hover {
+    background: var(--jokit-imo-primary);
+    color: white;
+    transform: scale(1.1);
+}
+
+.jokit-imo-gallery__carousel {
+    flex: 1;
+    overflow: hidden;
+}
+
+.jokit-imo-gallery__track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+}
+
+.jokit-imo-gallery__track::-webkit-scrollbar {
+    display: none;
+}
+
+.jokit-imo-gallery__slide {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    border-radius: var(--jokit-imo-radius-md);
+    overflow: hidden;
+    box-shadow: var(--jokit-imo-shadow-md);
+    transition: transform 0.3s ease;
+}
+
+.jokit-imo-gallery__slide:hover {
+    transform: scale(1.03);
+}
+
+.jokit-imo-gallery__slide img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.jokit-imo-gallery__dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+/* ============================================
+   CE CONȚINE SETUL
+   ============================================ */
+.jokit-imo-contents {
+    padding: 80px 20px;
+    background: white;
+}
+
+.jokit-imo-contents__container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.jokit-imo-contents__title {
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700;
+    color: var(--jokit-imo-secondary);
+    margin: 0 0 50px;
+}
+
+.jokit-imo-contents__title span {
+    color: var(--jokit-imo-primary);
+}
+
+.jokit-imo-contents__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.jokit-imo-contents__item {
+    background: linear-gradient(145deg, var(--jokit-imo-bg-warm) 0%, white 100%);
+    padding: 40px 30px;
+    border-radius: var(--jokit-imo-radius-lg);
+    box-shadow: var(--jokit-imo-shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.jokit-imo-contents__item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--jokit-imo-shadow-lg);
+}
+
+.jokit-imo-contents__number {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--jokit-imo-primary);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.jokit-imo-contents__label {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--jokit-imo-secondary);
+    margin-bottom: 8px;
+}
+
+.jokit-imo-contents__desc {
+    font-size: 0.95rem;
+    color: var(--jokit-imo-text-light);
+}
+
+/* ============================================
+   BENEFICII SECTION - IDENTIC CU LF
+   ============================================ */
+.jokit-imo-benefits {
+    padding: 60px 20px;
+    background: var(--jokit-imo-bg-light);
+}
+
+.jokit-imo-benefits__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.jokit-imo-benefits__title {
+    text-align: center;
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: 700;
+    color: var(--jokit-imo-secondary);
+    margin: 0 0 40px;
+}
+
+.jokit-imo-benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+}
+
+.jokit-imo-benefits__item {
+    background: transparent;
+    border-radius: 0;
+    padding: 20px;
+    text-align: center;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.jokit-imo-benefits__item:hover {
+    transform: translateY(-3px);
+}
+
+.jokit-imo-benefits__icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jokit-imo-benefits__icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.jokit-imo-benefits__item-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--jokit-imo-secondary);
+    margin: 0;
+}
+
+/* Responsive pentru beneficii */
+@media (max-width: 992px) {
+    .jokit-imo-benefits__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .jokit-imo-benefits__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    
+    .jokit-imo-benefits__icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .jokit-imo-benefits__item-title {
+        font-size: 13px;
+    }
+}
+
+/* ============================================
+   SECȚIUNI PĂRINȚI VS COPII
+   ============================================ */
+.jokit-imo-sections {
+    padding: 80px 20px;
+    background: white;
+}
+
+.jokit-imo-sections__container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.jokit-imo-sections__title {
+    text-align: center;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700;
+    color: var(--jokit-imo-secondary);
+    margin: 0 0 50px;
+}
+
+.jokit-imo-sections__title span {
+    color: var(--jokit-imo-primary);
+}
+
+.jokit-imo-sections__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.jokit-imo-section-card {
+    padding: 40px 30px;
+    border-radius: var(--jokit-imo-radius-lg);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jokit-imo-section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--jokit-imo-shadow-lg);
+}
+
+/* Secțiunea Părinți - Roșu */
+.jokit-imo-section-card--parinti {
+    background: linear-gradient(145deg, #FFEBEE 0%, #FFCDD2 100%);
+    border: 3px solid var(--jokit-imo-primary);
+}
+
+/* Secțiunea Copii - Galben */
+.jokit-imo-section-card--copii {
+    background: linear-gradient(145deg, #FFFDE7 0%, #FFF9C4 100%);
+    border: 3px solid var(--jokit-imo-accent);
+}
+
+.jokit-imo-section-card__badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.jokit-imo-section-card--parinti .jokit-imo-section-card__badge {
+    background: var(--jokit-imo-primary);
+    color: white;
+}
+
+.jokit-imo-section-card--copii .jokit-imo-section-card__badge {
+    background: var(--jokit-imo-accent);
+    color: var(--jokit-imo-secondary);
+}
+
+.jokit-imo-section-card__title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--jokit-imo-secondary);
+    margin: 0 0 16px;
+}
+
+.jokit-imo-section-card__desc {
+    font-size: 1rem;
+    color: var(--jokit-imo-text);
+    line-height: 1.7;
+    margin: 0 0 20px;
+}
+
+.jokit-imo-section-card__examples {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.jokit-imo-section-card__examples li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    font-size: 0.95rem;
+    color: var(--jokit-imo-text);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    font-style: italic;
+}
+
+.jokit-imo-section-card__examples li:last-child {
+    border-bottom: none;
+}
+
+.jokit-imo-section-card__examples li::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.jokit-imo-section-card--parinti .jokit-imo-section-card__examples li::before {
+    color: var(--jokit-imo-primary);
+}
+
+.jokit-imo-section-card--copii .jokit-imo-section-card__examples li::before {
+    color: var(--jokit-imo-accent-dark);
+}
+
+/* ============================================
+   CARDURI CAROUSEL - CU ANIMAȚIE UNSTACK
+   ============================================ */
+.jokit-imo-cards {
+    padding: 80px 0 80px 0;
+    background: linear-gradient(180deg, #FFF5F5 0%, #FFEBEE 50%, #FFF8F0 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+.jokit-imo-cards__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px 0 0;
+}
+
+.jokit-imo-cards__title {
+    text-align: left;
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 700;
+    color: var(--jokit-imo-secondary);
+    margin: 0 0 50px;
+    padding-left: 20px;
+}
+
+.jokit-imo-cards__carousel-wrapper {
+    position: relative;
+    max-width: 100%;
+    padding-left: 20px;
+}
+
+.jokit-imo-cards__carousel {
+    overflow: visible;
+    position: relative;
+}
+
+.jokit-imo-cards__track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 20px 0 40px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.jokit-imo-cards__track::-webkit-scrollbar {
+    display: none;
+}
+
+/* Card Item - Cu animație stivă */
+.jokit-imo-cards__card {
+    flex: 0 0 320px;
+    text-align: center;
+    background: white;
+    border-radius: var(--jokit-imo-radius-lg);
+    padding: 25px 25px 30px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.18);
+    position: relative;
+    border: 2px solid rgba(231, 76, 60, 0.1);
+    
+    /* Starea inițială - STIVUITĂ */
+    opacity: 0;
+    transform: translateX(-200px) rotate(-15deg) scale(0.8);
+    transform-origin: center bottom;
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Efect de stivă - umbrele sub cărți */
+.jokit-imo-cards__card::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 10px;
+    right: 10px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+/* Starea finală - DESFĂCUTĂ */
+.jokit-imo-cards__card.is-unstacked {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg) scale(1);
+}
+
+.jokit-imo-cards__card.is-unstacked::before {
+    opacity: 1;
+}
+
+/* Delay-uri pentru efectul de cascadă */
+.jokit-imo-cards__card:nth-child(1) { transition-delay: 0s; }
+.jokit-imo-cards__card:nth-child(2) { transition-delay: 0.08s; }
+.jokit-imo-cards__card:nth-child(3) { transition-delay: 0.16s; }
+.jokit-imo-cards__card:nth-child(4) { transition-delay: 0.24s; }
+.jokit-imo-cards__card:nth-child(5) { transition-delay: 0.32s; }
+.jokit-imo-cards__card:nth-child(6) { transition-delay: 0.40s; }
+.jokit-imo-cards__card:nth-child(7) { transition-delay: 0.48s; }
+.jokit-imo-cards__card:nth-child(8) { transition-delay: 0.56s; }
+.jokit-imo-cards__card:nth-child(9) { transition-delay: 0.64s; }
+.jokit-imo-cards__card:nth-child(10) { transition-delay: 0.72s; }
+
+/* Imaginea cărții */
+.jokit-imo-cards__card img {
+    width: 100%;
+    height: 340px;
+    object-fit: contain;
+    border-radius: 16px;
+    background: linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%);
+    padding: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.jokit-imo-cards__card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.jokit-imo-cards__card:hover img {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Titlul și descrierea cărții */
+.jokit-imo-cards__card-title {
+    display: block;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--jokit-imo-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.jokit-imo-cards__card-desc {
+    display: none;
+}
+
+/* Border top colorat pe fiecare card */
+.jokit-imo-cards__card[data-type="parinti"] {
+    border-top: 5px solid var(--jokit-imo-primary);
+}
+
+.jokit-imo-cards__card[data-type="copii"] {
+    border-top: 5px solid var(--jokit-imo-accent);
+}
+
+/* Card special - Cutia galbenă */
+.jokit-imo-cards__card[data-type="special"] {
+    border-top: 5px solid #FFC107;
+    background: linear-gradient(145deg, #FFFBEB 0%, #FFF8E1 100%);
+}
+
+/* Card instrucțiuni */
+.jokit-imo-cards__card[data-type="instructiuni"] {
+    border-top: 5px solid var(--jokit-imo-primary);
+    background: linear-gradient(145deg, #FFF5F5 0%, #FFEBEE 100%);
+}
+
+/* Ascunde card-desc dacă e gol */
+.jokit-imo-cards__card-desc:empty {
+    display: none;
+}
+
+/* Carousel Arrows */
+.jokit-imo-cards__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    backdrop-filter: blur(10px);
+}
+
+.jokit-imo-cards__arrow:hover {
+    background: var(--jokit-imo-primary);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 30px rgba(231, 76, 60, 0.4);
+}
+
+.jokit-imo-cards__arrow--prev {
+    left: 10px;
+}
+
+.jokit-imo-cards__arrow--next {
+    right: 10px;
+}
+
+.jokit-imo-cards__dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+/* ============================================
+   CUM CÂȘTIGI - HOW TO WIN
+   ============================================ */
+.jokit-imo-howtowin {
+    padding: 80px 20px;
+    background: white;
+}
+
+.jokit-imo-howtowin__container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.jokit-imo-howtowin__title {
+    text-align: center;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700;
+    color: var(--jokit-imo-secondary);
+    margin: 0 0 20px;
+}
+
+.jokit-imo-howtowin__intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--jokit-imo-text);
+    margin: 0 0 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jokit-imo-howtowin__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.jokit-imo-win-item {
+    text-align: center;
+    padding: 40px 25px;
+    background: linear-gradient(145deg, #E8F5E9 0%, #C8E6C9 100%);
+    border-radius: var(--jokit-imo-radius-lg);
+    border: 3px solid var(--jokit-imo-success);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jokit-imo-win-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--jokit-imo-shadow-lg);
+}
+
+.jokit-imo-win-item__icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.jokit-imo-win-item__title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--jokit-imo-success);
+    margin: 0 0 12px;
+}
+
+.jokit-imo-win-item__desc {
+    font-size: 0.95rem;
+    color: var(--jokit-imo-text);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ============================================
+   RECENZII CLIENȚI
+   ============================================ */
+.jokit-imo-reviews {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #FFF5F5 0%, var(--jokit-imo-bg-warm) 100%);
+}
+
+.jokit-imo-reviews__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.jokit-imo-reviews__title {
+    text-align: center;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700;
+    color: var(--jokit-imo-secondary);
+    margin: 0 0 50px;
+}
+
+.jokit-imo-reviews__carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.jokit-imo-reviews__arrow {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 2px solid var(--jokit-imo-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    color: var(--jokit-imo-primary);
+}
+
+.jokit-imo-reviews__arrow:hover {
+    background: var(--jokit-imo-primary);
+    color: white;
+}
+
+.jokit-imo-reviews__track {
+    flex: 1;
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+}
+
+.jokit-imo-reviews__track::-webkit-scrollbar {
+    display: none;
+}
+
+.jokit-imo-review {
+    flex: 0 0 360px;
+    background: white;
+    padding: 35px;
+    border-radius: var(--jokit-imo-radius-lg);
+    box-shadow: var(--jokit-imo-shadow-sm);
+    scroll-snap-align: start;
+    transition: all 0.3s ease;
+    border-left: 5px solid var(--jokit-imo-primary);
+}
+
+.jokit-imo-review:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--jokit-imo-shadow-lg);
+}
+
+.jokit-imo-review__stars {
+    color: #FFD700;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+}
+
+.jokit-imo-review__text {
+    font-size: 1rem;
+    color: var(--jokit-imo-text);
+    line-height: 1.7;
+    margin: 0 0 20px;
+    font-style: italic;
+}
+
+.jokit-imo-review__text::before {
+    content: '"';
+    font-size: 2.5rem;
+    color: var(--jokit-imo-primary);
+    line-height: 0;
+    vertical-align: -15px;
+    margin-right: 5px;
+}
+
+.jokit-imo-review__author {
+    font-weight: 700;
+    color: var(--jokit-imo-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.jokit-imo-review__author::before {
+    content: '❤️';
+}
+
+/* ============================================
+   CTA FINAL
+   ============================================ */
+.jokit-imo-cta {
+    padding: 100px 20px;
+    background: linear-gradient(145deg, var(--jokit-imo-primary) 0%, var(--jokit-imo-primary-dark) 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.jokit-imo-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 193, 7, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 40%);
+}
+
+.jokit-imo-cta__container {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.jokit-imo-cta__title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    color: white;
+    margin: 0 0 20px;
+}
+
+.jokit-imo-cta__subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 40px;
+}
+
+/* Opțiuni în CTA Final */
+.jokit-imo-cta__options {
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+.jokit-imo-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px 60px;
+    background: var(--jokit-imo-accent);
+    color: var(--jokit-imo-secondary);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+}
+
+.jokit-imo-cta__btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    background: var(--jokit-imo-accent-dark);
+}
+
+/* ============================================
+   RESPONSIVE - TABLET
+   ============================================ */
+@media (max-width: 992px) {
+    .jokit-imo-hero__container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .jokit-imo-hero__product-image {
+        order: -1;
+    }
+    
+    .jokit-imo-hero__product-image > img {
+        max-height: 350px;
+    }
+    
+    .jokit-imo-hero__title {
+        font-size: 2.2rem;
+    }
+    
+    .jokit-imo-hero__description {
+        max-width: 100%;
+    }
+    
+    .jokit-imo-hero__cta-row {
+        justify-content: center;
+    }
+    
+    .jokit-imo-contents__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .jokit-imo-sections__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .jokit-imo-howtowin__grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE
+   ============================================ */
+@media (max-width: 576px) {
+    .jokit-imo-hero-wrapper {
+        overflow: visible;
+    }
+    
+    .jokit-imo-hero {
+        padding: 30px 15px 60px;
+    }
+    
+    .jokit-imo-hero__container {
+        gap: 30px;
+    }
+    
+    .jokit-imo-hero__content {
+        padding: 0 5px;
+    }
+    
+    .jokit-imo-hero__title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .jokit-imo-hero__title-sub {
+        font-size: 1.1rem;
+        margin-top: 8px;
+    }
+    
+    .jokit-imo-hero__description {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        padding: 0 5px;
+    }
+    
+    .jokit-imo-hero__product-image > img {
+        max-height: 280px;
+    }
+    
+    /* Badge preț - identic cu LF */
+    .jokit-imo-hero__price-badge-full {
+        right: 50%;
+        transform: translateX(50%) rotate(-3deg);
+        bottom: -30px;
+        padding: 12px 20px;
+        border-radius: 12px;
+    }
+    
+    .jokit-imo-hero__badge-value {
+        font-size: 28px;
+    }
+    
+    .jokit-imo-hero__badge-old {
+        font-size: 12px;
+    }
+    
+    .jokit-imo-hero__badge-currency {
+        font-size: 14px;
+    }
+    
+    .jokit-imo-hero__badge-um {
+        font-size: 11px;
+    }
+    
+    /* Purchase options pe mobil - identic cu LF */
+    .jokit-imo-purchase-options {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 0;
+    }
+    
+    .jokit-imo-purchase-option {
+        padding: 10px;
+        padding-top: 16px;
+        margin-top: 10px;
+        gap: 4px;
+        flex-direction: column;
+    }
+    
+    .jokit-imo-purchase-option__badge {
+        position: absolute;
+        top: -10px;
+        right: 8px;
+        padding: 3px 8px;
+        font-size: 8px;
+    }
+    
+    .jokit-imo-purchase-option__title {
+        font-size: 12px;
+        line-height: 1.2;
+    }
+    
+    .jokit-imo-purchase-option__radio {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .jokit-imo-purchase-option__pricing {
+        padding-left: 24px;
+        gap: 6px;
+    }
+    
+    .jokit-imo-purchase-option__old-price {
+        font-size: 10px;
+    }
+    
+    .jokit-imo-purchase-option__new-price {
+        font-size: 14px;
+    }
+    
+    .jokit-imo-purchase-option__discount {
+        padding: 1px 4px;
+        font-size: 8px;
+    }
+    
+    .jokit-imo-purchase-option__savings {
+        font-size: 9px;
+        padding-left: 24px;
+    }
+    
+    .jokit-imo-hero__add-to-cart {
+        padding: 14px 30px;
+        font-size: 16px;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .jokit-imo-hero__qty-regulator {
+        padding: 6px 10px;
+        gap: 6px;
+        justify-content: center;
+    }
+    
+    .jokit-imo-hero__qty-btn {
+        width: 36px !important;
+        height: 36px !important;
+    }
+    
+    .jokit-imo-hero__qty-input {
+        width: 40px !important;
+        height: 36px !important;
+        font-size: 18px !important;
+    }
+    
+    .jokit-imo-hero__cta-row {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        align-items: center;
+    }
+    }
+    
+    .jokit-imo-contents__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .jokit-imo-contents__number {
+        font-size: 3rem;
+    }
+    
+    .jokit-imo-cards__card {
+        flex: 0 0 260px;
+    }
+    
+    .jokit-imo-cards__card img {
+        height: 240px;
+    }
+    
+    .jokit-imo-gallery__slide {
+        flex: 0 0 240px;
+    }
+    
+    .jokit-imo-review {
+        flex: 0 0 300px;
+    }
+    
+    .jokit-imo-cta__title {
+        font-size: 1.6rem;
+    }
+    
+    .jokit-imo-cta__btn {
+        padding: 16px 40px;
+        font-size: 1.1rem;
+    }
+}
+
+/* ============================================
+   ANIMAȚII SCROLL
+   ============================================ */
+.jokit-imo-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.jokit-imo-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   LIGHTBOX POPUP PENTRU GALERIE
+   ============================================ */
+.jokit-imo-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 40px;
+}
+
+.jokit-imo-lightbox.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.jokit-imo-lightbox__content {
+    position: relative;
+    max-width: 800px;
+    max-height: 80vh;
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jokit-imo-lightbox__content img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.jokit-imo-lightbox__close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.jokit-imo-lightbox__close svg {
+    width: 20px;
+    height: 20px;
+}
+
+.jokit-imo-lightbox__close:hover {
+    background: #ff4444;
+    color: white;
+    transform: rotate(90deg);
+}
+
+.jokit-imo-lightbox__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.jokit-imo-lightbox__nav svg {
+    width: 24px;
+    height: 24px;
+}
+
+.jokit-imo-lightbox__nav:hover {
+    background: #00ffed;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.jokit-imo-lightbox__nav--prev {
+    left: -70px;
+}
+
+.jokit-imo-lightbox__nav--next {
+    right: -70px;
+}
+
+/* Indicator cursor pe imagini galerie */
+.jokit-imo-gallery__slide {
+    cursor: pointer;
+}
+
+.jokit-imo-gallery__slide:hover img {
+    transform: scale(1.02);
+}
+
+/* ============================================
+   FOOTER - IDENTIC CU LIBERTATEA FINANCIARĂ
+   ============================================ */
+.jokit-imo-footer {
+    background: #1A1A2E;
+    color: white;
+}
+
+.jokit-imo-footer__main {
+    padding: 60px 20px;
+}
+
+.jokit-imo-footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.jokit-imo-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+.jokit-imo-footer__col {
+    display: flex;
+    flex-direction: column;
+}
+
+.jokit-imo-footer__title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFD700;
+    margin: 0 0 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.jokit-imo-footer__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.jokit-imo-footer__links li {
+    margin-bottom: 12px;
+}
+
+.jokit-imo-footer__links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.jokit-imo-footer__links a:hover {
+    color: #FFD700;
+}
+
+.jokit-imo-footer__info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.jokit-imo-footer__info li {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.jokit-imo-footer__info li strong {
+    color: white;
+    font-weight: 600;
+}
+
+.jokit-imo-footer__support-hours {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    margin: 0 0 8px;
+}
+
+.jokit-imo-footer__support-note {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    margin: 0 0 20px;
+}
+
+.jokit-imo-footer__email {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #FFD700;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border: 2px solid #FFD700;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.jokit-imo-footer__email:hover {
+    background: #FFD700;
+    color: #0F2027;
+}
+
+.jokit-imo-footer__email svg {
+    stroke: currentColor;
+}
+
+.jokit-imo-footer__bottom {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 25px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.jokit-imo-footer__bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.jokit-imo-footer__payment {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.jokit-imo-footer__payment img {
+    height: 35px;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    filter: brightness(1);
+}
+
+.jokit-imo-footer__payment a {
+    display: flex;
+    align-items: center;
+}
+
+.jokit-imo-footer__payment img:hover {
+    opacity: 1;
+    filter: brightness(1.1);
+}
+
+.jokit-imo-footer__copyright {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+}
+
+.jokit-imo-footer__copyright p {
+    margin: 0;
+}
+
+/* Footer Responsive */
+@media (max-width: 992px) {
+    .jokit-imo-footer__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .jokit-imo-footer__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .jokit-imo-footer__bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .jokit-imo-lightbox__nav {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .jokit-imo-lightbox__nav--prev {
+        left: 10px;
+    }
+    
+    .jokit-imo-lightbox__nav--next {
+        right: 10px;
+    }
+}

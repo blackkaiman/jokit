@@ -1,0 +1,1529 @@
+/**
+ * ============================================
+ * JOKIT - LIBERTATEA FINANCIARĂ
+ * Stiluri CSS pentru Gomag
+ * ============================================
+ * 
+ * INSTRUCȚIUNI:
+ * Adaugă acest cod în Design → Editor CSS din panoul Gomag
+ * SAU încarcă-l ca fișier extern
+ */
+
+/* ============================================
+   CSS VARIABILE
+   ============================================ */
+:root {
+    --jokit-primary: #FFD700;
+    --jokit-primary-dark: #E6C200;
+    --jokit-secondary: #1A1A2E;
+    --jokit-secondary-light: #2D2D44;
+    --jokit-accent: #FF6B35;
+    --jokit-success: #28A745;
+    --jokit-text: #333333;
+    --jokit-text-light: #666666;
+    --jokit-white: #FFFFFF;
+    --jokit-bg-light: #F8F9FA;
+    --jokit-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --jokit-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --jokit-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+    --jokit-radius-sm: 8px;
+    --jokit-radius-md: 12px;
+    --jokit-radius-lg: 20px;
+    --jokit-transition: 0.3s ease;
+}
+
+/* ============================================
+   ASCUNDERE ELEMENTE GOMAG DEFAULT
+   ============================================ */
+.jokit-lf-active .product-gallery,
+.jokit-lf-active .product-images,
+.jokit-lf-active .product-info .product-name,
+.jokit-lf-active .product-info .product-price-box,
+.jokit-lf-active .product-info .product-short-description,
+.jokit-lf-active .product-info .add-to-cart-box,
+.jokit-lf-active .product-tabs,
+.jokit-lf-active .related-products,
+.jokit-lf-active .product-attributes {
+    display: none !important;
+}
+
+.jokit-lf-active .product-info {
+    max-width: 100%;
+    width: 100%;
+    float: none;
+}
+
+.jokit-lf-active .product-page-content {
+    display: block;
+    width: 100%;
+}
+
+/* ============================================
+   CONTAINER PRINCIPAL
+   ============================================ */
+.jokit-lf-wrapper {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    line-height: 1.6;
+    color: var(--jokit-text);
+}
+
+.jokit-lf-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.jokit-lf-hero {
+    background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
+    padding: 60px 20px 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.jokit-lf-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://gomagcdn.ro/domains2/jokit.ro/files/custom/libertatea-financiara/background.png') center/cover;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.jokit-lf-hero__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero - Imaginea Produsului */
+.jokit-lf-hero__image-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jokit-lf-hero__image-wrap::before {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.7) 0%, rgba(255, 215, 0, 0.4) 30%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: jokitGlow 3s ease-in-out infinite;
+}
+
+@keyframes jokitGlow {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+.jokit-lf-hero__image {
+    max-width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+    position: relative;
+    z-index: 1;
+    transition: transform 0.4s ease;
+    animation: floatGentlyLF 4s ease-in-out infinite;
+}
+
+@keyframes floatGentlyLF {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+
+.jokit-lf-hero__image-wrap:hover .jokit-lf-hero__image {
+    transform: scale(1.03) rotate(-2deg);
+    animation-play-state: paused;
+}
+
+/* Hero - Badge Preț */
+.jokit-lf-hero__price-badge {
+    position: absolute;
+    bottom: 20px;
+    right: -10px;
+    background: linear-gradient(145deg, #E74C3C 0%, #C0392B 100%);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.5);
+    transform: rotate(-3deg);
+    z-index: 10;
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% { transform: rotate(-3deg) scale(1); }
+    50% { transform: rotate(-3deg) scale(1.03); }
+}
+
+.jokit-lf-hero__price-old {
+    font-size: 14px;
+    text-decoration: line-through;
+    opacity: 0.8;
+    display: block;
+    text-align: center;
+}
+
+.jokit-lf-hero__price-current {
+    font-size: 32px;
+    font-weight: 800;
+    display: block;
+    text-align: center;
+}
+
+.jokit-lf-hero__price-currency {
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    opacity: 0.9;
+}
+
+/* Hero - Content */
+.jokit-lf-hero__content {
+    color: white;
+}
+
+.jokit-lf-hero__title {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 20px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.jokit-lf-hero__title-main {
+    display: block;
+    color: var(--jokit-primary);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.jokit-lf-hero__title-sub {
+    display: block;
+    font-size: clamp(20px, 3vw, 32px);
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    margin-top: 10px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.jokit-lf-hero__description {
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+    margin: 0 0 30px;
+    max-width: 500px;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Hero - CTA Area */
+.jokit-lf-hero__cta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.jokit-lf-hero__qty-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50px;
+    padding: 5px;
+    backdrop-filter: blur(10px);
+}
+
+.jokit-lf-hero__qty-btn {
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jokit-lf-hero__qty-btn:hover {
+    background: var(--jokit-primary);
+    color: var(--jokit-secondary);
+}
+
+.jokit-lf-hero__qty-input {
+    width: 50px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.jokit-lf-hero__add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--jokit-primary);
+    color: var(--jokit-secondary);
+    padding: 16px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.jokit-lf-hero__add-btn:hover {
+    background: var(--jokit-primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+}
+
+.jokit-lf-hero__add-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Hero Wave Separator */
+.jokit-lf-hero__wave {
+    position: absolute;
+    bottom: -2px;
+    left: -1px;
+    right: -1px;
+    height: 150px;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.jokit-lf-hero__wave svg {
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    display: block;
+    margin: -1px;
+}
+
+/* Eliminare orice linie de la hero */
+.jokit-lf-hero-wrapper,
+.jokit-lf-hero {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* ============================================
+   BENEFICII SECTION
+   ============================================ */
+.jokit-lf-benefits {
+    background: var(--jokit-bg-light);
+    padding: 80px 20px;
+    margin-top: -5px;
+    padding-top: 85px;
+    border: none !important;
+}
+
+.jokit-lf-section-title {
+    text-align: center;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700;
+    color: var(--jokit-secondary);
+    margin: 0 0 50px;
+}
+
+.jokit-lf-benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.jokit-lf-benefit {
+    background: white;
+    padding: 30px;
+    border-radius: var(--jokit-radius-md);
+    box-shadow: var(--jokit-shadow-sm);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.jokit-lf-benefit:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--jokit-shadow-md);
+}
+
+.jokit-lf-benefit__icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+}
+
+.jokit-lf-benefit__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.jokit-lf-benefit__title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--jokit-secondary);
+    margin: 0 0 10px;
+}
+
+.jokit-lf-benefit__text {
+    font-size: 14px;
+    color: var(--jokit-text-light);
+    margin: 0;
+}
+
+/* ============================================
+   CARDURI CAROUSEL - CU ANIMAȚIE UNSTACK
+   ============================================ */
+.jokit-lf-cards {
+    padding: 80px 0 80px 0;
+    background: linear-gradient(180deg, #f0f4e8 0%, #e8f0dc 50%, #f5f7f2 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+.jokit-lf-cards__subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: var(--jokit-text-light);
+    margin: -30px 0 60px;
+    padding: 0 20px;
+}
+
+.jokit-lf-cards__wrapper {
+    position: relative;
+    max-width: 100%;
+    margin: 0;
+    padding-left: 40px;
+}
+
+.jokit-lf-cards__carousel {
+    overflow: visible;
+    position: relative;
+}
+
+.jokit-lf-cards__track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 20px 0 40px;
+}
+
+/* ============================================
+   CARD ITEM - CU ANIMAȚIE STIVĂ
+   ============================================ */
+.jokit-lf-cards__card {
+    flex: 0 0 280px;
+    text-align: center;
+    background: white;
+    border-radius: 20px;
+    padding: 20px 20px 25px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    position: relative;
+    
+    /* Starea inițială - STIVUITĂ */
+    opacity: 0;
+    transform: translateX(-200px) rotate(-15deg) scale(0.8);
+    transform-origin: center bottom;
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Efect de stivă - umbrele sub cărți */
+.jokit-lf-cards__card::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 10px;
+    right: 10px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+/* Starea finală - DESFĂCUTĂ (când e vizibilă) */
+.jokit-lf-cards__card.is-unstacked {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg) scale(1);
+}
+
+.jokit-lf-cards__card.is-unstacked::before {
+    opacity: 1;
+}
+
+/* Delay-uri pentru efectul de cascadă */
+.jokit-lf-cards__card:nth-child(1) { transition-delay: 0s; }
+.jokit-lf-cards__card:nth-child(2) { transition-delay: 0.08s; }
+.jokit-lf-cards__card:nth-child(3) { transition-delay: 0.16s; }
+.jokit-lf-cards__card:nth-child(4) { transition-delay: 0.24s; }
+.jokit-lf-cards__card:nth-child(5) { transition-delay: 0.32s; }
+.jokit-lf-cards__card:nth-child(6) { transition-delay: 0.40s; }
+.jokit-lf-cards__card:nth-child(7) { transition-delay: 0.48s; }
+.jokit-lf-cards__card:nth-child(8) { transition-delay: 0.56s; }
+.jokit-lf-cards__card:nth-child(9) { transition-delay: 0.64s; }
+.jokit-lf-cards__card:nth-child(10) { transition-delay: 0.72s; }
+.jokit-lf-cards__card:nth-child(11) { transition-delay: 0.80s; }
+.jokit-lf-cards__card:nth-child(12) { transition-delay: 0.88s; }
+.jokit-lf-cards__card:nth-child(13) { transition-delay: 0.96s; }
+.jokit-lf-cards__card:nth-child(14) { transition-delay: 1.04s; }
+.jokit-lf-cards__card:nth-child(15) { transition-delay: 1.12s; }
+
+/* Imaginea cărții */
+.jokit-lf-cards__card img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.3s ease;
+}
+
+.jokit-lf-cards__card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.jokit-lf-cards__card:hover img {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Titlul și descrierea cărții */
+.jokit-lf-cards__card-title {
+    display: block;
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--jokit-secondary);
+}
+
+.jokit-lf-cards__card-desc {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--jokit-text-light);
+    line-height: 1.5;
+}
+
+/* Border top colorat pe fiecare card */
+.jokit-lf-cards__card[data-type="actiune"] {
+    border-top: 4px solid #8B5CF6;
+}
+
+.jokit-lf-cards__card[data-type="negativ"] {
+    border-top: 4px solid #F97316;
+}
+
+.jokit-lf-cards__card[data-type="venit"] {
+    border-top: 4px solid #10B981;
+}
+
+/* ============================================
+   CAROUSEL ARROWS - POZIȚIONARE NOUĂ
+   ============================================ */
+.jokit-lf-cards .jokit-lf-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    backdrop-filter: blur(10px);
+}
+
+.jokit-lf-cards .jokit-lf-arrow:hover {
+    background: var(--jokit-primary);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4);
+}
+
+.jokit-lf-cards .jokit-lf-arrow--prev {
+    left: 10px;
+}
+
+.jokit-lf-cards .jokit-lf-arrow--next {
+    right: 20px;
+}
+
+.jokit-lf-cards .jokit-lf-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: translateY(-50%) scale(0.9);
+}
+
+.jokit-lf-cards .jokit-lf-arrow svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 2.5;
+}
+
+/* Carousel Dots - stilizate pentru carduri */
+.jokit-lf-cards .jokit-lf-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.jokit-lf-cards .jokit-lf-dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.jokit-lf-cards .jokit-lf-dot:hover {
+    background: rgba(255, 215, 0, 0.5);
+    transform: scale(1.2);
+}
+
+.jokit-lf-cards .jokit-lf-dot.active {
+    background: var(--jokit-primary);
+    width: 40px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(255, 215, 0, 0.4);
+}
+
+/* Titlul secțiunii carduri */
+.jokit-lf-cards .jokit-lf-section-title {
+    font-style: italic;
+    padding: 0 20px;
+}
+
+/* General Carousel Arrows (pentru alte secțiuni) */
+.jokit-lf-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: var(--jokit-shadow-md);
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.jokit-lf-arrow:hover {
+    background: var(--jokit-primary);
+}
+
+.jokit-lf-arrow--prev {
+    left: -24px;
+}
+
+.jokit-lf-arrow--next {
+    right: -24px;
+}
+
+.jokit-lf-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* General Carousel Dots */
+.jokit-lf-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.jokit-lf-dot {
+    width: 10px;
+    height: 10px;
+    background: #ddd;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.jokit-lf-dot.active {
+    background: var(--jokit-primary);
+    width: 30px;
+    border-radius: 5px;
+}
+
+/* ============================================
+   DESCRIERE SECTION
+   ============================================ */
+.jokit-lf-description {
+    padding: 80px 20px;
+    background: var(--jokit-bg-light);
+}
+
+.jokit-lf-description__inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.jokit-lf-description p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.jokit-lf-description h3 {
+    font-size: 24px;
+    color: var(--jokit-secondary);
+    margin: 40px 0 20px;
+}
+
+.jokit-lf-card-types {
+    display: grid;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.jokit-lf-card-type {
+    background: white;
+    padding: 25px;
+    border-radius: var(--jokit-radius-md);
+    box-shadow: var(--jokit-shadow-sm);
+    border-left: 4px solid var(--jokit-primary);
+}
+
+.jokit-lf-card-type h4 {
+    font-size: 18px;
+    margin: 0 0 10px;
+    color: var(--jokit-secondary);
+}
+
+.jokit-lf-card-type p {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* Winning Options */
+.jokit-lf-winning {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.jokit-lf-winning__option {
+    background: white;
+    padding: 30px;
+    border-radius: var(--jokit-radius-md);
+    text-align: center;
+    box-shadow: var(--jokit-shadow-sm);
+}
+
+.jokit-lf-winning__option strong {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--jokit-secondary);
+}
+
+/* ============================================
+   XTB SPONSOR SECTION
+   ============================================ */
+.jokit-lf-sponsor {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1A1A2E 0%, #0F3460 100%);
+    color: white;
+    text-align: center;
+}
+
+.jokit-lf-sponsor__title {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 20px;
+    opacity: 0.9;
+}
+
+.jokit-lf-sponsor__logo {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--jokit-primary);
+    margin-bottom: 20px;
+}
+
+.jokit-lf-sponsor__text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+/* ============================================
+   REVIEWS SECTION
+   ============================================ */
+.jokit-lf-reviews {
+    padding: 80px 20px;
+    background: white;
+}
+
+.jokit-lf-reviews__wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.jokit-lf-reviews__track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.4s ease;
+}
+
+.jokit-lf-review {
+    flex: 0 0 calc(33.333% - 20px);
+    background: var(--jokit-bg-light);
+    padding: 30px;
+    border-radius: var(--jokit-radius-md);
+    min-width: 300px;
+}
+
+.jokit-lf-review__stars {
+    color: var(--jokit-primary);
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.jokit-lf-review__text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--jokit-text);
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.jokit-lf-review__author {
+    font-weight: 700;
+    color: var(--jokit-secondary);
+}
+
+/* ============================================
+   FINAL CTA
+   ============================================ */
+.jokit-lf-final-cta {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, var(--jokit-secondary) 0%, #0F3460 100%);
+    text-align: center;
+    color: white;
+}
+
+.jokit-lf-final-cta__title {
+    font-size: clamp(28px, 4vw, 40px);
+    margin: 0 0 15px;
+}
+
+.jokit-lf-final-cta__text {
+    font-size: 18px;
+    opacity: 0.9;
+    margin: 0 0 30px;
+}
+
+.jokit-lf-final-cta__price {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--jokit-primary);
+    margin-bottom: 30px;
+}
+
+.jokit-lf-final-cta__options {
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+.jokit-lf-final-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--jokit-primary);
+    color: var(--jokit-secondary);
+    padding: 20px 50px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.jokit-lf-final-cta__btn:hover {
+    background: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 992px) {
+    .jokit-lf-hero__inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .jokit-lf-hero__content {
+        order: 1;
+    }
+    
+    .jokit-lf-hero__image-wrap {
+        order: 2;
+    }
+    
+    .jokit-lf-hero__description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .jokit-lf-hero__cta {
+        justify-content: center;
+    }
+    
+    .jokit-lf-review {
+        flex: 0 0 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .jokit-lf-hero {
+        padding: 40px 20px 80px;
+    }
+    
+    .jokit-lf-benefits,
+    .jokit-lf-cards,
+    .jokit-lf-description,
+    .jokit-lf-reviews,
+    .jokit-lf-final-cta {
+        padding: 50px 15px;
+    }
+    
+    .jokit-lf-cards__card {
+        flex: 0 0 140px;
+    }
+    
+    .jokit-lf-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .jokit-lf-arrow--prev {
+        left: 5px;
+    }
+    
+    .jokit-lf-arrow--next {
+        right: 5px;
+    }
+    
+    .jokit-lf-review {
+        flex: 0 0 100%;
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 576px) {
+    .jokit-lf-hero__price-badge {
+        right: 50%;
+        transform: translateX(50%) rotate(-3deg);
+        bottom: -30px;
+    }
+    
+    .jokit-lf-hero__cta {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .jokit-lf-hero__add-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .jokit-lf-benefits__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Purchase options mai mici pe mobil */
+    .jokit-lf-purchase-option {
+        padding: 10px;
+        padding-top: 16px;
+        margin-top: 10px;
+        gap: 4px;
+    }
+    
+    .jokit-lf-purchase-option__badge {
+        top: -10px;
+        right: 8px;
+        padding: 3px 8px;
+        font-size: 8px;
+    }
+    
+    .jokit-lf-purchase-option__title {
+        font-size: 12px;
+        line-height: 1.2;
+    }
+    
+    .jokit-lf-purchase-option__radio {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .jokit-lf-purchase-option__pricing {
+        padding-left: 24px;
+        gap: 6px;
+    }
+    
+    .jokit-lf-purchase-option__old-price {
+        font-size: 10px;
+    }
+    
+    .jokit-lf-purchase-option__new-price {
+        font-size: 14px;
+    }
+    
+    .jokit-lf-purchase-option__discount {
+        padding: 1px 4px;
+        font-size: 8px;
+    }
+    
+    .jokit-lf-purchase-option__savings {
+        font-size: 9px;
+        padding-left: 24px;
+    }
+    
+    .jokit-lf-hero__qty-regulator {
+        padding: 6px 10px;
+        gap: 6px;
+    }
+    
+    .jokit-lf-hero__qty-btn {
+        width: 36px !important;
+        height: 36px !important;
+    }
+    
+    .jokit-lf-hero__qty-input {
+        width: 40px !important;
+        height: 36px !important;
+        font-size: 18px !important;
+    }
+}
+
+/* ============================================
+   ANIMAȚII SCROLL
+   ============================================ */
+.jokit-lf-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.jokit-lf-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   NOTIFICARE COȘUL
+   ============================================ */
+.jokit-lf-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #28A745, #218838);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(40, 167, 69, 0.4);
+    z-index: 9999;
+    transform: translateX(120%);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.jokit-lf-notification.show {
+    transform: translateX(0);
+}
+
+/* ============================================
+   PURCHASE OPTIONS (Opțiuni de Cumpărare)
+   ============================================ */
+.jokit-lf-purchase-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+    margin-bottom: 20px;
+}
+
+.jokit-lf-purchase-option {
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 14px;
+    padding-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    opacity: 0.7;
+    overflow: visible;
+    margin-top: 12px;
+}
+
+.jokit-lf-purchase-option:hover {
+    border-color: rgba(255, 215, 0, 0.5);
+    background: rgba(255, 215, 0, 0.08);
+    opacity: 0.9;
+}
+
+.jokit-lf-purchase-option.selected {
+    border-color: var(--jokit-primary);
+    background: rgba(255, 215, 0, 0.2);
+    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.35), 0 4px 15px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+.jokit-lf-purchase-option__badge {
+    position: absolute;
+    top: -12px;
+    right: 12px;
+    background: #28a745;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.jokit-lf-purchase-option__badge--best {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #1A1A2E;
+}
+
+/* Shine effect pentru Best Value - doar pe pachet */
+.jokit-lf-purchase-option[data-option="pachet"]::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    background: linear-gradient(
+        110deg,
+        transparent 0%,
+        transparent 40%,
+        rgba(255, 215, 0, 0.3) 50%,
+        transparent 60%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shine 2.5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes shine {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.jokit-lf-purchase-option__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.jokit-lf-purchase-option__radio {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.jokit-lf-purchase-option:hover .jokit-lf-purchase-option__radio {
+    border-color: rgba(255, 215, 0, 0.6);
+    transform: scale(1.1);
+}
+
+.jokit-lf-purchase-option.selected .jokit-lf-purchase-option__radio {
+    border-color: var(--jokit-primary);
+    background: var(--jokit-primary);
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.jokit-lf-purchase-option.selected .jokit-lf-purchase-option__radio::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #1A1A2E;
+    border-radius: 50%;
+    animation: radioPopIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes radioPopIn {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+.jokit-lf-purchase-option__title {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    line-height: 1.3;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.jokit-lf-purchase-option__pricing {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding-left: 28px;
+}
+
+.jokit-lf-purchase-option__old-price {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: line-through;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.jokit-lf-purchase-option__new-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--jokit-primary);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.jokit-lf-purchase-option__discount {
+    background: var(--jokit-accent);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.jokit-lf-purchase-option__savings {
+    width: 100%;
+    padding-left: 28px;
+    font-size: 11px;
+    color: white;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Quantity Selector mai mare și mai vizibil */
+.jokit-lf-hero__qty-regulator {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    margin-right: 15px;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(255, 180, 0, 0.15));
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    border-radius: 50px;
+    padding: 8px 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.jokit-lf-hero__qty-btn {
+    width: 44px !important;
+    height: 44px !important;
+    background: linear-gradient(135deg, #FFD700, #FFC000) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    color: #1A1A2E !important;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.jokit-lf-hero__qty-btn:hover {
+    background: linear-gradient(135deg, #FFE44D, #FFD700) !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+.jokit-lf-hero__qty-btn:active {
+    transform: scale(0.95) !important;
+}
+
+.jokit-lf-hero__qty-btn svg {
+    stroke-width: 3 !important;
+}
+
+.jokit-lf-hero__qty-input {
+    width: 50px !important;
+    height: 44px !important;
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    color: #1A1A2E !important;
+    background: transparent !important;
+    border: none !important;
+    text-align: center !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Mobile responsive pentru purchase options */
+@media (max-width: 992px) {
+    .jokit-lf-purchase-options {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .jokit-lf-purchase-option {
+        background: rgba(0, 0, 0, 0.3);
+        border: 2px solid rgba(255, 215, 0, 0.4);
+        backdrop-filter: blur(10px);
+    }
+    
+    .jokit-lf-purchase-option.selected {
+        background: rgba(0, 0, 0, 0.4);
+        border-color: var(--jokit-primary);
+    }
+    
+    .jokit-lf-purchase-option__title {
+        font-size: 14px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    
+    .jokit-lf-purchase-option__new-price {
+        font-size: 18px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    }
+    
+    .jokit-lf-purchase-option__old-price {
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    }
+    
+    .jokit-lf-purchase-option__savings {
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    }
+    
+    /* CTA Row centrat pe mobil */
+    .jokit-lf-hero__cta-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .jokit-lf-hero__add-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+    }
+    
+    .jokit-lf-hero__qty-regulator {
+        transform: none;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    
+    .jokit-lf-hero__add-to-cart {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+}
+
+/* ============================================
+   LIGHTBOX POPUP PENTRU GALERIE
+   ============================================ */
+.jokit-lf-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 40px;
+}
+
+.jokit-lf-lightbox.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.jokit-lf-lightbox__content {
+    position: relative;
+    max-width: 800px;
+    max-height: 80vh;
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jokit-lf-lightbox__content img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.jokit-lf-lightbox__close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.jokit-lf-lightbox__close svg {
+    width: 20px;
+    height: 20px;
+}
+
+.jokit-lf-lightbox__close:hover {
+    background: #ff4444;
+    color: white;
+    transform: rotate(90deg);
+}
+
+.jokit-lf-lightbox__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.jokit-lf-lightbox__nav svg {
+    width: 24px;
+    height: 24px;
+}
+
+.jokit-lf-lightbox__nav:hover {
+    background: #FFD700;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.jokit-lf-lightbox__nav--prev {
+    left: -70px;
+}
+
+.jokit-lf-lightbox__nav--next {
+    right: -70px;
+}
+
+/* Indicator cursor pe imagini galerie */
+.jokit-lf-gallery__slide {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.jokit-lf-gallery__slide:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .jokit-lf-lightbox {
+        padding: 20px;
+    }
+    
+    .jokit-lf-lightbox__nav--prev {
+        left: 10px;
+    }
+    
+    .jokit-lf-lightbox__nav--next {
+        right: 10px;
+    }
+    
+    .jokit-lf-lightbox__nav {
+        width: 40px;
+        height: 40px;
+    }
+}
