@@ -1136,6 +1136,7 @@
     margin-top: 24px;
     margin-bottom: 20px;
     align-items: stretch;
+    grid-auto-rows: 1fr;
 }
 
 .jokit-lf-purchase-option {
@@ -1310,20 +1311,20 @@
     font-size: 11px;
     color: white;
     font-weight: 700;
+    flex-grow: 1;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.15), 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .jokit-lf-purchase-option__image {
-    margin-top: auto;
-    padding-top: 10px;
+    margin-top: 12px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
 }
 
 .jokit-lf-purchase-option__image img {
-    max-width: 70px;
-    max-height: 70px;
+    max-width: 80px;
+    max-height: 80px;
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
