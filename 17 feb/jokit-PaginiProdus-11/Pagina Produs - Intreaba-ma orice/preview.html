@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Întreabă-mă Orice - JOKIT Preview</title>
+    <link rel="stylesheet" href="gomag/jokit-imo-gomag.css">
+    <style>
+        /* Reset pentru preview */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Simulare clasă activă */
+        body.jokit-imo-active .product-gallery,
+        body.jokit-imo-active .product-images,
+        body.jokit-imo-active .product-info .product-name,
+        body.jokit-imo-active .product-info .product-price-box,
+        body.jokit-imo-active .product-info .product-short-description,
+        body.jokit-imo-active .product-info .add-to-cart-box,
+        body.jokit-imo-active .product-tabs,
+        body.jokit-imo-active .related-products {
+            display: none !important;
+        }
+        
+        .product-info {
+            display: none;
+        }
+    </style>
+</head>
+<body class="jokit-imo-active">
+    <!-- Simulare product-info Gomag (ascuns) -->
+    <div class="product-info">
+        <!-- Conținut Gomag original - ascuns -->
+    </div>
+
+    <!-- ================================================
+         JOKIT - ÎNTREABĂ-MĂ ORICE - CONȚINUT PERSONALIZAT
+         ================================================ -->
+    <div class="jokit-imo-wrapper">
+        
+        <!-- ============================================
+             HERO WRAPPER CU BACKGROUND
+             ============================================ -->
+        <div class="jokit-imo-hero-wrapper">
+            
+            <!-- ============================================
+                 HEADER
+                 ============================================ -->
+            <header class="jokit-imo-header">
+                <div class="jokit-imo-header__container">
+                    <div class="jokit-imo-header__logo">
+                        <a href="https://www.jokit.ro">
+                            <img src="https://gomagcdn.ro/domains2/jokit.ro/files/company/logo3371.png" alt="Jokit" width="120">
+                        </a>
+                    </div>
+                    
+                    <nav class="jokit-imo-header__nav">
+                        <a href="https://www.jokit.ro/jocuri" class="jokit-imo-header__nav-link">Jocuri</a>
+                        <a href="https://www.jokit.ro/produse" class="jokit-imo-header__nav-link">Produse</a>
+                        <a href="https://www.jokit.ro/despre-noi" class="jokit-imo-header__nav-link">Despre Noi</a>
+                        <a href="https://www.jokit.ro/contact" class="jokit-imo-header__nav-link">Contact</a>
+                    </nav>
+                    
+                    <div class="jokit-imo-header__icons">
+                        <a href="https://www.jokit.ro/inregistrare" class="jokit-imo-header__icon" title="Contul meu">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </a>
+                        <a href="https://www.jokit.ro/cos-de-cumparaturi" class="jokit-imo-header__icon jokit-imo-header__cart" title="Coș">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            <span class="jokit-imo-header__cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- ============================================
+                 HERO SECTION
+                 ============================================ -->
+            <section class="jokit-imo-hero">
+                <div class="jokit-imo-hero__container">
+                    <!-- Imaginea Produsului -->
+                    <div class="jokit-imo-hero__product-image">
+                        <img src="hero-image.png" 
+                             alt="Întreabă-mă Orice - Set de cărți">
+                        
+                        <!-- Badge Preț pe Imagine -->
+                        <div class="jokit-imo-hero__price-badge-full">
+                            <span class="jokit-imo-hero__badge-old">90,50 RON</span>
+                            <div class="jokit-imo-hero__badge-main">
+                                <span class="jokit-imo-hero__badge-value">59,99</span>
+                                <span class="jokit-imo-hero__badge-currency">RON</span>
+                            </div>
+                            <span class="jokit-imo-hero__badge-um">/bucată</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Conținut Text -->
+                    <div class="jokit-imo-hero__content">
+                        <h1 class="jokit-imo-hero__title">
+                            <span class="jokit-imo-hero__title-main">Întreabă-mă Orice</span>
+                            <span class="jokit-imo-hero__title-sub">Set de întrebări pentru părinți și copii</span>
+                        </h1>
+                        
+                        <p class="jokit-imo-hero__description">
+                            Un joc de cărți care transformă conversațiile obișnuite în momente speciale. 
+                            124 de întrebări atent selectate vă ajută să vă descoperiți mai bine și să creați amintiri de neuitat.
+                        </p>
+                        
+                        <!-- Opțiuni de Cumpărare -->
+                        <div class="jokit-imo-purchase-options">
+                            <!-- Option 1: 2x Same Game -->
+                            <div class="jokit-imo-purchase-option jokit-imo-purchase-option--with-image selected" data-option="dublu">
+                                <span class="jokit-imo-purchase-option__badge">Popular</span>
+                                <div class="jokit-imo-purchase-option__header">
+                                    <div class="jokit-imo-purchase-option__radio"></div>
+                                    <span class="jokit-imo-purchase-option__title">2x Întreabă-mă Orice + Transport Gratuit</span>
+                                </div>
+                                <div class="jokit-imo-purchase-option__pricing">
+                                    <span class="jokit-imo-purchase-option__old-price">180,99 RON</span>
+                                    <span class="jokit-imo-purchase-option__new-price">119,98 RON</span>
+                                    <span class="jokit-imo-purchase-option__discount">-34%</span>
+                                </div>
+                                <div class="jokit-imo-purchase-option__savings">Economisești 61,01 RON + Transport Gratuit</div>
+                                <div class="jokit-imo-purchase-option__product-image">
+                                    <img src="box-2x-intreaba-ma-orice.png" alt="2x Întreabă-mă Orice">
+                                </div>
+                            </div>
+                            
+                            <!-- Option 3: Single Game -->
+                            <div class="jokit-imo-purchase-option jokit-imo-purchase-option--with-image" data-option="singur">
+                                <div class="jokit-imo-purchase-option__header">
+                                    <div class="jokit-imo-purchase-option__radio"></div>
+                                    <span class="jokit-imo-purchase-option__title">Un joc Întreabă-mă Orice</span>
+                                </div>
+                                <div class="jokit-imo-purchase-option__pricing">
+                                    <span class="jokit-imo-purchase-option__old-price">90,50 RON</span>
+                                    <span class="jokit-imo-purchase-option__new-price">59,99 RON</span>
+                                    <span class="jokit-imo-purchase-option__discount">-34%</span>
+                                </div>
+                                <div class="jokit-imo-purchase-option__savings">Economisești 30,51 RON</div>
+                                <div class="jokit-imo-purchase-option__product-image">
+                                    <img src="box-intreaba-ma-orice.png" alt="Întreabă-mă Orice">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Buton Adaugă în Coș -->
+                        <div class="jokit-imo-hero__cta-row">
+                            <button class="jokit-imo-hero__add-to-cart">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                </svg>
+                                Adaugă în Coș
+                            </button>
+                            <a href="#" class="jokit-imo-hero__tutorial-link" id="openTutorial">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                                Vezi Tutorialul
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Wave Separator -->
+            <div class="jokit-imo-hero__wave">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path d="M0 120L60 105C120 90 240 60 360 52.5C480 45 600 60 720 67.5C840 75 960 75 1080 67.5C1200 60 1320 45 1380 37.5L1440 30V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#FDF5E6"/>
+                </svg>
+            </div>
+        </section>
+    </div>
+
+        <!-- ============================================
+             CONȚINUT PRINCIPAL
+             ============================================ -->
+        <div class="jokit-imo-main-bg">
+            
+            <!-- ============================================
+                 GALERIE IMAGINI
+                 ============================================ -->
+            <section class="jokit-imo-gallery">
+                <div class="jokit-imo-gallery__container">
+                    <h2 class="jokit-imo-gallery__title jokit-imo-animate">Galerie Produs</h2>
+                    <div class="jokit-imo-gallery__carousel-wrapper">
+                        <button class="jokit-imo-gallery__arrow jokit-imo-gallery__arrow--prev">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"/>
+                            </svg>
+                        </button>
+                        <div class="jokit-imo-gallery__carousel">
+                            <div class="jokit-imo-gallery__track">
+                                <div class="jokit-imo-gallery__slide" data-lightbox="0">
+                                    <img src="Intreaba-ma orice - Poze Produs/IMG_1095-yes Edited.jpg" alt="Imagine 1">
+                                </div>
+                                <div class="jokit-imo-gallery__slide" data-lightbox="1">
+                                    <img src="Intreaba-ma orice - Poze Produs/IMG_1105 Edited.jpg" alt="Imagine 2">
+                                </div>
+                                <div class="jokit-imo-gallery__slide" data-lightbox="2">
+                                    <img src="Intreaba-ma orice - Poze Produs/IMG_1113 Edited.jpg" alt="Imagine 3">
+                                </div>
+                                <div class="jokit-imo-gallery__slide" data-lightbox="3">
+                                    <img src="Intreaba-ma orice - Poze Produs/IMG_1114 Edited.jpg" alt="Imagine 4">
+                                </div>
+                                <div class="jokit-imo-gallery__slide" data-lightbox="4">
+                                    <img src="Intreaba-ma orice - Poze Produs/IMG_1121 Edited.jpg" alt="Imagine 5">
+                                </div>
+                                <div class="jokit-imo-gallery__slide" data-lightbox="5">
+                                    <img src="Intreaba-ma orice - Poze Produs/IMG_1125 Edited.jpg" alt="Imagine 6">
+                                </div>
+                                <div class="jokit-imo-gallery__slide" data-lightbox="6">
+                                    <img src="Intreaba-ma orice - Poze Produs/IMG_1130 Edited.jpg" alt="Imagine 7">
+                                </div>
+                                <div class="jokit-imo-gallery__slide" data-lightbox="7">
+                                    <img src="Intreaba-ma orice - Poze Produs/IMG_1132 Edited.jpg" alt="Imagine 8">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="jokit-imo-gallery__arrow jokit-imo-gallery__arrow--next">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ============================================
+                 BENEFICII - IDENTIC CU LIBERTATEA FINANCIARĂ
+                 ============================================ -->
+            <section class="jokit-imo-benefits" id="beneficii">
+                <div class="jokit-imo-benefits__container">
+                    <h2 class="jokit-imo-benefits__title">Beneficii Cheie</h2>
+                    <div class="jokit-imo-benefits__grid">
+                        <div class="jokit-imo-benefits__item">
+                            <div class="jokit-imo-benefits__icon">
+                                <img src="Intreaba-ma orice - Iconite/Comunicare deschisă.svg" alt="Comunicare Deschisă">
+                            </div>
+                            <h3 class="jokit-imo-benefits__item-title">Comunicare Deschisă</h3>
+                        </div>
+                        <div class="jokit-imo-benefits__item">
+                            <div class="jokit-imo-benefits__icon">
+                                <img src="Intreaba-ma orice - Iconite/Conexiune profundă.svg" alt="Conexiune Profundă">
+                            </div>
+                            <h3 class="jokit-imo-benefits__item-title">Conexiune Profundă</h3>
+                        </div>
+                        <div class="jokit-imo-benefits__item">
+                            <div class="jokit-imo-benefits__icon">
+                                <img src="Intreaba-ma orice - Iconite/Cunoaștere reciprocă.svg" alt="Cunoaștere Reciprocă">
+                            </div>
+                            <h3 class="jokit-imo-benefits__item-title">Cunoaștere Reciprocă</h3>
+                        </div>
+                        <div class="jokit-imo-benefits__item">
+                            <div class="jokit-imo-benefits__icon">
+                                <img src="Intreaba-ma orice - Iconite/Dezvolți inteligența emoțională.svg" alt="Inteligență Emoțională">
+                            </div>
+                            <h3 class="jokit-imo-benefits__item-title">Inteligență Emoțională</h3>
+                        </div>
+                        <div class="jokit-imo-benefits__item">
+                            <div class="jokit-imo-benefits__icon">
+                                <img src="Intreaba-ma orice - Iconite/Distracție în familie.svg" alt="Distracție în Familie">
+                            </div>
+                            <h3 class="jokit-imo-benefits__item-title">Distracție în Familie</h3>
+                        </div>
+                        <div class="jokit-imo-benefits__item">
+                            <div class="jokit-imo-benefits__icon">
+                                <img src="Intreaba-ma orice - Iconite/Joc fără ecran.svg" alt="Joc Fără Ecran">
+                            </div>
+                            <h3 class="jokit-imo-benefits__item-title">Joc Fără Ecran</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================
+                 CAROUSEL CĂRȚI - CU ANIMAȚIE UNSTACK
+                 ============================================ -->
+            <section class="jokit-imo-cards" id="carti">
+                <div class="jokit-imo-cards__container">
+                    <h2 class="jokit-imo-cards__title jokit-imo-animate">🎴 Previzualizează Cărțile</h2>
+                    <div class="jokit-imo-cards__carousel-wrapper">
+                        <button class="jokit-imo-cards__arrow jokit-imo-cards__arrow--prev">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"/>
+                            </svg>
+                        </button>
+                        <div class="jokit-imo-cards__carousel">
+                            <div class="jokit-imo-cards__track">
+                                <div class="jokit-imo-cards__card" data-type="special">
+                                    <img src="Intreaba-ma orice - Poze Carduri/Box_1.jpg" alt="Cutia Întreabă-mă Orice">
+                                    <span class="jokit-imo-cards__card-title">Cutia Jocului</span>
+                                </div>
+                                <div class="jokit-imo-cards__card" data-type="instructiuni">
+                                    <img src="Intreaba-ma orice - Poze Carduri/Card_8.jpg" alt="Regulament">
+                                    <span class="jokit-imo-cards__card-title">Regulament & Instrucțiuni</span>
+                                </div>
+                                <div class="jokit-imo-cards__card" data-type="parinti">
+                                    <img src="Intreaba-ma orice - Poze Carduri/Card_1.jpg" alt="Întrebare Părinți">
+                                    <span class="jokit-imo-cards__card-title">Întrebare pentru Părinți</span>
+                                </div>
+                                <div class="jokit-imo-cards__card" data-type="copii">
+                                    <img src="Intreaba-ma orice - Poze Carduri/Card_2.jpg" alt="Întrebare Copii">
+                                    <span class="jokit-imo-cards__card-title">Întrebare pentru Copii</span>
+                                </div>
+                                <div class="jokit-imo-cards__card" data-type="parinti">
+                                    <img src="Intreaba-ma orice - Poze Carduri/Card_3.jpg" alt="Întrebare Părinți">
+                                    <span class="jokit-imo-cards__card-title">Întrebare pentru Părinți</span>
+                                </div>
+                                <div class="jokit-imo-cards__card" data-type="copii">
+                                    <img src="Intreaba-ma orice - Poze Carduri/Card_4.jpg" alt="Întrebare Copii">
+                                    <span class="jokit-imo-cards__card-title">Întrebare pentru Copii</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="jokit-imo-cards__arrow jokit-imo-cards__arrow--next">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================
+                 CE CONȚINE SETUL
+                 ============================================ -->
+            <section class="jokit-imo-contents" id="continut">
+                <div class="jokit-imo-contents__container">
+                    <h2 class="jokit-imo-contents__title jokit-imo-animate">Ce conține <span>setul</span>?</h2>
+                    <div class="jokit-imo-contents__grid">
+                        <div class="jokit-imo-contents__item jokit-imo-animate">
+                            <div class="jokit-imo-contents__number">124</div>
+                            <div class="jokit-imo-contents__label">Întrebări în Total</div>
+                            <div class="jokit-imo-contents__desc">Întrebări pentru toată familia</div>
+                        </div>
+                        <div class="jokit-imo-contents__item jokit-imo-animate">
+                            <div class="jokit-imo-contents__number" style="color: #E74C3C;">62</div>
+                            <div class="jokit-imo-contents__label">Cărți ale Copiilor</div>
+                            <div class="jokit-imo-contents__desc">Întrebări pe fundal roșu puse de copii către părinți</div>
+                        </div>
+                        <div class="jokit-imo-contents__item jokit-imo-animate">
+                            <div class="jokit-imo-contents__number" style="color: #FFA000;">62</div>
+                            <div class="jokit-imo-contents__label">Cărți ale Părinților</div>
+                            <div class="jokit-imo-contents__desc">Întrebări pe fundal alb puse de părinți către copii</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ============================================
+                 SECȚIUNI PĂRINȚI VS COPII
+                 ============================================ -->
+            <section class="jokit-imo-sections">
+                <div class="jokit-imo-sections__container">
+                    <h2 class="jokit-imo-sections__title jokit-imo-animate">Două tipuri de <span>întrebări</span></h2>
+                    <div class="jokit-imo-sections__grid">
+                        <!-- Secțiunea Părinți -->
+                        <div class="jokit-imo-section-card jokit-imo-section-card--parinti jokit-imo-animate">
+                            <span class="jokit-imo-section-card__badge">62 Cărți roșii</span>
+                            <p class="jokit-imo-section-card__badge-sub">62 întrebări către părinți</p>
+                            <h3 class="jokit-imo-section-card__title">Întrebări către Părinți</h3>
+                            <p class="jokit-imo-section-card__desc">
+                                Întrebările pe fundal roșu le pun copiii către părinți.
+                            </p>
+                            <ul class="jokit-imo-section-card__examples">
+                                <li>Ai făcut armata?</li>
+                                <li>Ce îți plăcea să faci cel mai mult când erai copil?</li>
+                                <li>Ce te făcea fericit când erai mic?</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Secțiunea Copii -->
+                        <div class="jokit-imo-section-card jokit-imo-section-card--copii jokit-imo-animate">
+                            <span class="jokit-imo-section-card__badge">62 Cărți albe</span>
+                            <p class="jokit-imo-section-card__badge-sub">62 întrebări către copii</p>
+                            <h3 class="jokit-imo-section-card__title">Întrebări către Copii</h3>
+                            <p class="jokit-imo-section-card__desc">
+                                Întrebările pe fundal alb le pun părinții către copii.
+                            </p>
+                            <ul class="jokit-imo-section-card__examples">
+                                <li>Care este cel mai bun prieten al tău și de ce?</li>
+                                <li>Ce lucruri interesante ai aflat astăzi?</li>
+                                <li>Ce te face să te simți iubit?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================
+                 CUM CÂȘTIGI
+                 ============================================ -->
+            <section class="jokit-imo-howtowin">
+                <div class="jokit-imo-howtowin__container">
+                    <h2 class="jokit-imo-howtowin__title jokit-imo-animate">💡 Cum câștigă toată lumea?</h2>
+                    <p class="jokit-imo-howtowin__intro jokit-imo-animate">În acest joc nu există învinși - toți câștigă timp de calitate!</p>
+                    <div class="jokit-imo-howtowin__grid">
+                        <div class="jokit-imo-win-item jokit-imo-animate">
+                            <div class="jokit-imo-win-item__icon">🗣️</div>
+                            <h3 class="jokit-imo-win-item__title">Conversații Sincere</h3>
+                            <p class="jokit-imo-win-item__desc">Răspundeți sincer și deschis la întrebări</p>
+                        </div>
+                        <div class="jokit-imo-win-item jokit-imo-animate">
+                            <div class="jokit-imo-win-item__icon">👂</div>
+                            <h3 class="jokit-imo-win-item__title">Ascultare Activă</h3>
+                            <p class="jokit-imo-win-item__desc">Ascultă cu atenție și curiozitate răspunsurile</p>
+                        </div>
+                        <div class="jokit-imo-win-item jokit-imo-animate">
+                            <div class="jokit-imo-win-item__icon">💝</div>
+                            <h3 class="jokit-imo-win-item__title">Momente de Calitate</h3>
+                            <p class="jokit-imo-win-item__desc">Bucurați-vă împreună de timpul petrecut</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ============================================
+                 RECENZII
+                 ============================================ -->
+            <section class="jokit-imo-reviews" id="recenzii">
+                <div class="jokit-imo-reviews__container">
+                    <h2 class="jokit-imo-reviews__title jokit-imo-animate">💬 Ce spun familiile care s-au jucat deja Întreabă-mă Orice</h2>
+                    <div class="jokit-imo-reviews__carousel-wrapper">
+                        <button class="jokit-imo-reviews__arrow jokit-imo-reviews__arrow--prev">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"/>
+                            </svg>
+                        </button>
+                        <div class="jokit-imo-reviews__track">
+                            <div class="jokit-imo-review">
+                                <div class="jokit-imo-review__stars">★★★★★</div>
+                                <p class="jokit-imo-review__text">Cel mai frumos mod de a petrece o seară în familie! Am descoperit lucruri noi despre copiii mei.</p>
+                                <div class="jokit-imo-review__author">Elena M.</div>
+                            </div>
+                            <div class="jokit-imo-review">
+                                <div class="jokit-imo-review__stars">★★★★★</div>
+                                <p class="jokit-imo-review__text">Copiii mei abia așteaptă să jucăm. Întrebările sunt foarte bine gândite pentru toate vârstele.</p>
+                                <div class="jokit-imo-review__author">Andrei P.</div>
+                            </div>
+                            <div class="jokit-imo-review">
+                                <div class="jokit-imo-review__stars">★★★★★</div>
+                                <p class="jokit-imo-review__text">Un cadou perfect pentru orice familie! Recomand cu căldură.</p>
+                                <div class="jokit-imo-review__author">Diana C.</div>
+                            </div>
+                            <div class="jokit-imo-review">
+                                <div class="jokit-imo-review__stars">★★★★★</div>
+                                <p class="jokit-imo-review__text">Am râs, ne-am emoționat și am creat amintiri frumoase. Mulțumim!</p>
+                                <div class="jokit-imo-review__author">Mihai & Ana</div>
+                            </div>
+                        </div>
+                        <button class="jokit-imo-reviews__arrow jokit-imo-reviews__arrow--next">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================
+                 CTA FINAL
+                 ============================================ -->
+            <section class="jokit-imo-cta">
+                <div class="jokit-imo-cta__container">
+                    <h2 class="jokit-imo-cta__title jokit-imo-animate">Începe Conversațiile care Contează!</h2>
+                    <p class="jokit-imo-cta__subtitle jokit-imo-animate">Comandă acum și bucură-te de momente speciale în familie</p>
+                    
+                    <!-- Opțiuni de Cumpărare -->
+                    <div class="jokit-imo-purchase-options jokit-imo-cta__options">
+                        <!-- Option 1: 2x Same Game -->
+                        <div class="jokit-imo-purchase-option jokit-imo-purchase-option--with-image selected" data-option="dublu">
+                            <span class="jokit-imo-purchase-option__badge">Popular</span>
+                            <div class="jokit-imo-purchase-option__header">
+                                <div class="jokit-imo-purchase-option__radio"></div>
+                                <span class="jokit-imo-purchase-option__title">2x Întreabă-mă Orice + Transport Gratuit</span>
+                            </div>
+                            <div class="jokit-imo-purchase-option__pricing">
+                                <span class="jokit-imo-purchase-option__old-price">180,99 RON</span>
+                                <span class="jokit-imo-purchase-option__new-price">119,98 RON</span>
+                                <span class="jokit-imo-purchase-option__discount">-34%</span>
+                            </div>
+                            <div class="jokit-imo-purchase-option__savings">Economisești 61,01 RON + Transport Gratuit</div>
+                            <div class="jokit-imo-purchase-option__product-image">
+                                <img src="box-2x-intreaba-ma-orice.png" alt="2x Întreabă-mă Orice">
+                            </div>
+                        </div>
+                        
+                        <!-- Option 3: Single Game -->
+                        <div class="jokit-imo-purchase-option jokit-imo-purchase-option--with-image" data-option="singur">
+                            <div class="jokit-imo-purchase-option__header">
+                                <div class="jokit-imo-purchase-option__radio"></div>
+                                <span class="jokit-imo-purchase-option__title">Un joc Întreabă-mă Orice</span>
+                            </div>
+                            <div class="jokit-imo-purchase-option__pricing">
+                                <span class="jokit-imo-purchase-option__old-price">90,50 RON</span>
+                                <span class="jokit-imo-purchase-option__new-price">59,99 RON</span>
+                                <span class="jokit-imo-purchase-option__discount">-34%</span>
+                            </div>
+                            <div class="jokit-imo-purchase-option__savings">Economisești 30,51 RON</div>
+                            <div class="jokit-imo-purchase-option__product-image">
+                                <img src="box-intreaba-ma-orice.png" alt="Întreabă-mă Orice">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="jokit-imo-cta__btn jokit-imo-animate">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                        Adaugă în Coș
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- ============================================
+             FOOTER
+             ============================================ -->
+        <footer class="jokit-imo-footer">
+            <div class="jokit-imo-footer__main">
+                <div class="jokit-imo-footer__container">
+                    <div class="jokit-imo-footer__grid">
+                        <!-- Coloana 1: Magazin -->
+                        <div class="jokit-imo-footer__col">
+                            <h4 class="jokit-imo-footer__title">Magazinul Jokit</h4>
+                            <ul class="jokit-imo-footer__links">
+                                <li><a href="https://www.jokit.ro/despre-noi">Despre noi</a></li>
+                                <li><a href="https://www.jokit.ro/termeni-si-conditii">Termeni și Condiții</a></li>
+                                <li><a href="https://www.jokit.ro/politica-de-confidentialitate">Politica de Confidențialitate</a></li>
+                                <li><a href="https://www.jokit.ro/info-transport">Politica de livrare</a></li>
+                                <li><a href="https://www.jokit.ro/contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Coloana 2: Clienți -->
+                        <div class="jokit-imo-footer__col">
+                            <h4 class="jokit-imo-footer__title">Clienți</h4>
+                            <ul class="jokit-imo-footer__links">
+                                <li><a href="https://www.jokit.ro/metode-de-plata">Metode de Plată</a></li>
+                                <li><a href="https://www.jokit.ro/politica-de-retur">Politica de Retur</a></li>
+                                <li><a href="https://www.jokit.ro/garantia-produselor">Garanția Produselor</a></li>
+                                <li><a href="https://anpc.ro/" target="_blank" rel="nofollow noopener">ANPC</a></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Coloana 3: Date comerciale -->
+                        <div class="jokit-imo-footer__col">
+                            <h4 class="jokit-imo-footer__title">Date Comerciale</h4>
+                            <ul class="jokit-imo-footer__info">
+                                <li><strong>DESIGN OGMA S.R.L.</strong></li>
+                                <li>J40/8795/2024</li>
+                                <li>RO50008663</li>
+                                <li>Str. Pitar Mos, Nr.27</li>
+                                <li>București, România</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Coloana 4: Suport -->
+                        <div class="jokit-imo-footer__col">
+                            <h4 class="jokit-imo-footer__title">Suport Clienți</h4>
+                            <p class="jokit-imo-footer__support-hours">Luni-Vineri, 10:00-18:00</p>
+                            <p class="jokit-imo-footer__support-note">Durata medie de răspuns: 2 zile lucrătoare</p>
+                            <a href="mailto:office@jokit.ro" class="jokit-imo-footer__email">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                office@jokit.ro
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="jokit-imo-footer__bottom">
+                <div class="jokit-imo-footer__container">
+                    <div class="jokit-imo-footer__bottom-content">
+                        <div class="jokit-imo-footer__payment">
+                            <img src="https://gomagcdn.ro/themes/fashion/gfx/plationline.png" alt="Plăți Online" height="30">
+                            <a href="https://reclamatiisal.anpc.ro/" target="_blank" rel="nofollow noopener">
+                                <img src="https://gomagcdn.ro/themes/fashion/gfx/sal.png" alt="SAL" height="30">
+                            </a>
+                            <a href="https://europa.eu/youreurope/business/dealing-with-customers/solving-disputes/alternative-dispute-resolution/index_ro.htm" target="_blank" rel="nofollow noopener">
+                                <img src="https://gomagcdn.ro/themes/fashion/gfx/sol.png" alt="SOL" height="30">
+                            </a>
+                        </div>
+                        <div class="jokit-imo-footer__copyright">
+                            <p>&copy; 2024 Jokit, reprezentat prin DESIGN OGMA S.R.L.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- ============================================
+             LIGHTBOX PENTRU GALERIE
+             ============================================ -->
+        <div class="jokit-imo-lightbox" id="jokitLightbox">
+            <button class="jokit-imo-lightbox__close" id="lightboxClose">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <button class="jokit-imo-lightbox__nav jokit-imo-lightbox__nav--prev" id="lightboxPrev">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <div class="jokit-imo-lightbox__content">
+                <img src="" alt="" id="lightboxImage">
+            </div>
+            <button class="jokit-imo-lightbox__nav jokit-imo-lightbox__nav--next" id="lightboxNext">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+
+        <!-- ============================================
+             VIDEO TUTORIAL MODAL
+             ============================================ -->
+        <div class="jokit-imo-video-modal" id="videoModal">
+            <div class="jokit-imo-video-modal__overlay" id="videoModalOverlay"></div>
+            <div class="jokit-imo-video-modal__container">
+                <button class="jokit-imo-video-modal__close" id="videoModalClose">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <div class="jokit-imo-video-modal__content">
+                    <iframe id="tutorialVideo" 
+                            src="" 
+                            title="Tutorial Întreabă-mă Orice" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // ============================================
+        // FUNCȚIONALITATE CANTITATE
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const qtyInput = document.querySelector('.jokit-imo-hero__qty-input');
+            const minusBtn = document.querySelector('.jokit-imo-hero__qty-btn.minus');
+            const plusBtn = document.querySelector('.jokit-imo-hero__qty-btn.plus');
+            
+            console.log('Quantity selector initialized:', { qtyInput, minusBtn, plusBtn });
+            
+            if (minusBtn && qtyInput) {
+                minusBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    let val = parseInt(qtyInput.value) || 1;
+                    if (val > 1) {
+                        qtyInput.value = val - 1;
+                    }
+                    console.log('Minus clicked, new value:', qtyInput.value);
+                });
+            }
+            
+            if (plusBtn && qtyInput) {
+                plusBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    let val = parseInt(qtyInput.value) || 1;
+                    qtyInput.value = val + 1;
+                    console.log('Plus clicked, new value:', qtyInput.value);
+                });
+            }
+            
+            // ============================================
+            // PURCHASE OPTIONS SELECTION
+            // ============================================
+            const purchaseOptions = document.querySelectorAll('.jokit-imo-purchase-option');
+            
+            purchaseOptions.forEach(function(option) {
+                option.addEventListener('click', function() {
+                    // Remove selected from all
+                    purchaseOptions.forEach(function(opt) {
+                        opt.classList.remove('selected');
+                    });
+                    // Add selected to clicked
+                    this.classList.add('selected');
+                });
+            });
+            
+            // ============================================
+            // CAROUSEL FUNCȚIONALITATE
+            // ============================================
+            function initCarousel(trackSel, prevSel, nextSel, scrollAmt) {
+                const track = document.querySelector(trackSel);
+                const prev = document.querySelector(prevSel);
+                const next = document.querySelector(nextSel);
+                
+                if (!track || !prev || !next) return;
+                
+                prev.addEventListener('click', () => {
+                    track.scrollBy({ left: -scrollAmt, behavior: 'smooth' });
+                });
+                
+                next.addEventListener('click', () => {
+                    track.scrollBy({ left: scrollAmt, behavior: 'smooth' });
+                });
+            }
+            
+            initCarousel('.jokit-imo-gallery__track', '.jokit-imo-gallery__arrow--prev', '.jokit-imo-gallery__arrow--next', 300);
+            initCarousel('.jokit-imo-cards__track', '.jokit-imo-cards__arrow--prev', '.jokit-imo-cards__arrow--next', 310);
+            initCarousel('.jokit-imo-reviews__track', '.jokit-imo-reviews__arrow--prev', '.jokit-imo-reviews__arrow--next', 385);
+            
+            // ============================================
+            // SCROLL ANIMATIONS
+            // ============================================
+            const animatedElements = document.querySelectorAll('.jokit-imo-animate');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            animatedElements.forEach(el => observer.observe(el));
+            
+            // ============================================
+            // ANIMAȚIE UNSTACK CARDURI
+            // ============================================
+            const cardsSection = document.querySelector('.jokit-imo-cards');
+            const cards = document.querySelectorAll('.jokit-imo-cards__card');
+            
+            if (cardsSection && cards.length) {
+                const unstackObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            cards.forEach(card => {
+                                card.classList.add('is-unstacked');
+                            });
+                            unstackObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.2,
+                    rootMargin: '0px 0px -100px 0px'
+                });
+                
+                unstackObserver.observe(cardsSection);
+            }
+            
+            // ============================================
+            // ADD TO CART BUTTONS
+            // ============================================
+            const addToCartBtns = document.querySelectorAll('.jokit-imo-hero__add-to-cart, .jokit-imo-cta__btn');
+            addToCartBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const qty = parseInt(document.querySelector('.jokit-imo-hero__qty-input')?.value) || 1;
+                    alert(`${qty}x Întreabă-mă Orice adăugat în coș! 🎴`);
+                });
+            });
+
+            // ============================================
+            // LIGHTBOX PENTRU GALERIE + CARDURI
+            // ============================================
+            const lightbox = document.getElementById('jokitLightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxClose = document.getElementById('lightboxClose');
+            const lightboxPrev = document.getElementById('lightboxPrev');
+            const lightboxNext = document.getElementById('lightboxNext');
+            const gallerySlides = document.querySelectorAll('.jokit-imo-gallery__slide');
+            const cardSlides = document.querySelectorAll('.jokit-imo-cards__card');
+            
+            let currentImageIndex = 0;
+            const galleryImages = [];
+            
+            // Setez gallery la click din galerie
+            gallerySlides.forEach((slide, index) => {
+                const img = slide.querySelector('img');
+                if (img) {
+                    galleryImages.push(img.src);
+                    slide.style.cursor = 'pointer';
+                    slide.addEventListener('click', () => {
+                        currentImageIndex = index;
+                        currentLightboxImages = galleryImages;
+                        openLightbox(img.src);
+                    });
+                }
+            });
+            
+            // Colectează toate imaginile din carousel cărți
+            const cardImages = [];
+            cardSlides.forEach((card, index) => {
+                const img = card.querySelector('img');
+                if (img) {
+                    cardImages.push(img.src);
+                    card.style.cursor = 'pointer';
+                    card.addEventListener('click', () => {
+                        currentImageIndex = index;
+                        // Temporar setăm galleryImages la cardImages pentru navigare
+                        currentLightboxImages = cardImages;
+                        openLightbox(img.src);
+                    });
+                }
+            });
+            
+            let currentLightboxImages = galleryImages;
+            
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.classList.add('is-active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeLightbox() {
+                lightbox.classList.remove('is-active');
+                document.body.style.overflow = '';
+            }
+            
+            function showPrevImage() {
+                currentImageIndex = (currentImageIndex - 1 + currentLightboxImages.length) % currentLightboxImages.length;
+                lightboxImage.src = currentLightboxImages[currentImageIndex];
+            }
+            
+            function showNextImage() {
+                currentImageIndex = (currentImageIndex + 1) % currentLightboxImages.length;
+                lightboxImage.src = currentLightboxImages[currentImageIndex];
+            }
+            
+            if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+            if (lightboxPrev) lightboxPrev.addEventListener('click', showPrevImage);
+            if (lightboxNext) lightboxNext.addEventListener('click', showNextImage);
+            
+            // Închide cu click pe fundal
+            if (lightbox) {
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox) closeLightbox();
+                });
+            }
+            
+            // Navigare cu tastatura
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('is-active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') showPrevImage();
+                if (e.key === 'ArrowRight') showNextImage();
+            });
+
+            // ============================================
+            // VIDEO TUTORIAL MODAL
+            // ============================================
+            const videoModal = document.getElementById('videoModal');
+            const videoModalOverlay = document.getElementById('videoModalOverlay');
+            const videoModalClose = document.getElementById('videoModalClose');
+            const tutorialVideo = document.getElementById('tutorialVideo');
+            const openTutorialBtn = document.getElementById('openTutorial');
+            const youtubeVideoId = 'K_HszuzOw8Y';
+            
+            function openVideoModal() {
+                tutorialVideo.src = `https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1`;
+                videoModal.classList.add('is-active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeVideoModal() {
+                videoModal.classList.remove('is-active');
+                tutorialVideo.src = '';
+                document.body.style.overflow = '';
+            }
+            
+            if (openTutorialBtn) {
+                openTutorialBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openVideoModal();
+                });
+            }
+            
+            if (videoModalClose) videoModalClose.addEventListener('click', closeVideoModal);
+            if (videoModalOverlay) videoModalOverlay.addEventListener('click', closeVideoModal);
+            
+            // Escape key to close video modal
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && videoModal.classList.contains('is-active')) {
+                    closeVideoModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

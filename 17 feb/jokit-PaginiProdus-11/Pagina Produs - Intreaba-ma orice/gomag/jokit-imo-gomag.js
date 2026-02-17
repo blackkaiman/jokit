@@ -155,12 +155,11 @@
     // VERIFICARE PAGINĂ PRODUS
     // ============================================
     function isProductPage() {
-        const url = decodeURIComponent(window.location.href).toLowerCase();
-        return url.includes('întreabă-mă-orice') ||
+        const url = window.location.href.toLowerCase();
+        return url.includes(CONFIG.productSlug) || 
                url.includes('intreaba-ma-orice') ||
-               url.includes('întreb') ||
-               url.includes(CONFIG.productSlug) || 
-               document.querySelector('[data-product-id="' + CONFIG.productId + '"]') !== null;
+               url.includes('intreaba-ma-orice') ||
+               document.querySelector(`[data-product-id="${CONFIG.productId}"]`) !== null;
     }
 
     // ============================================
@@ -612,49 +611,15 @@
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 const qty = parseInt(qtyInput?.value) || 1;
-                
-                // Metoda 1: API Gomag nativ (jQuery)
-                if (typeof $ !== 'undefined' && $.Gomag && $.Gomag.addToCart) {
-                    $.Gomag.addToCart({
-                        'p': parseInt(CONFIG.productId),
-                        'l': 'd'
-                    });
+                // Trigger Gomag add to cart
+                const gomagAddBtn = document.querySelector('.add-to-cart-box .btn-cart, .add-to-cart, .add2cart');
+                if (gomagAddBtn) {
+                    gomagAddBtn.click();
+                } else {
+                    alert(`${qty}x ${PRODUCT_DATA.name} adăugat în coș!`);
                 }
-                // Metoda 2: funcție globală
-                else if (typeof addToCart === 'function') {
-                    addToCart(CONFIG.productId, qty);
-                }
-                // Metoda 3: click pe butonul Gomag ascuns
-                else {
-                    const gomagQtyInput = document.querySelector('input[name="quantity"]');
-                    const gomagAddBtn = document.querySelector('.add-to-cart-box .btn-cart, .add-to-cart, .add2cart, .btn-add-to-cart, [data-action="add-to-cart"]');
-                    
-                    if (gomagQtyInput && gomagAddBtn) {
-                        gomagQtyInput.value = qty;
-                        gomagAddBtn.click();
-                    } else {
-                        // Metoda 4: redirect direct la URL coș Gomag
-                        window.location.href = '/cos-de-cumparaturi/adauga/' + CONFIG.productId + '/' + qty;
-                    }
-                }
-                
-                // Notificare vizuală
-                showCartNotification(qty);
             });
         });
-    }
-
-    function showCartNotification(qty) {
-        let notif = document.querySelector('.jokit-imo-notification');
-        if (!notif) {
-            notif = document.createElement('div');
-            notif.className = 'jokit-imo-notification';
-            notif.style.cssText = 'position:fixed;top:20px;right:20px;background:#27AE60;color:#fff;padding:16px 24px;border-radius:12px;font-weight:600;z-index:99999;transform:translateX(120%);transition:transform 0.3s ease;box-shadow:0 4px 20px rgba(0,0,0,0.15);';
-            document.body.appendChild(notif);
-        }
-        notif.textContent = '✓ ' + qty + 'x ' + PRODUCT_DATA.name + ' adăugat în coș!';
-        setTimeout(() => { notif.style.transform = 'translateX(0)'; }, 50);
-        setTimeout(() => { notif.style.transform = 'translateX(120%)'; }, 3000);
     }
 
     // ============================================

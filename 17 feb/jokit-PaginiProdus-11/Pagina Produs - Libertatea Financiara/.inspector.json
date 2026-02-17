@@ -1,0 +1,5 @@
+{
+  "setup": "echo \"No setup needed\"",
+  "run": "npx vite",
+  "htmlEntry": "preview.html"
+}

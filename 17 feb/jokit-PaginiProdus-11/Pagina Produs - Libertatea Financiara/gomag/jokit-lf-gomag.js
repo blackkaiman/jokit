@@ -19,8 +19,8 @@
         // Slug-ul produsului din URL (pentru detectare)
         productSlug: 'libertatea-financiar',
         
-        // ID-ul produsului în Gomag (confirmat din pagina live)
-        productId: '3',
+        // ID-ul produsului în Gomag (verifică în admin)
+        productId: '6',
         
         // Prețuri
         priceOld: '90,50',
@@ -205,10 +205,7 @@
     // ============================================
 
     function isTargetProduct() {
-        var url = decodeURIComponent(window.location.href).toLowerCase();
-        return url.indexOf('libertatea-financiar') !== -1 ||
-               url.indexOf('libertatea-financiară') !== -1 ||
-               url.indexOf('pachet-2-jocuri') !== -1;
+        return window.location.href.indexOf(JOKIT_LF_CONFIG.productSlug) !== -1;
     }
 
     function createStars(count) {

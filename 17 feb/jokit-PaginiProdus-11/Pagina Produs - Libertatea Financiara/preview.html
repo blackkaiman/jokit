@@ -50,13 +50,13 @@
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 20px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 20px rgba(0, 0, 0, 0.15);
         }
         
         .single_add_to_cart_button:hover {
             background: #E6C200;
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 0 30px rgba(255, 215, 0, 0.5);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.2);
         }
         
         /* Simulare preț WooCommerce */
@@ -366,7 +366,12 @@
             flex-wrap: wrap;
         }
         
-        /* Quantity selector removed per feedback */
+        /* Quantity selector - ELIMINAT conform feedback */
+        .jokit-lf-hero__qty-regulator,
+        .jokit-lf-hero__qty-btn,
+        .jokit-lf-hero__qty-input {
+            display: none !important;
+        }
         
         .jokit-lf-hero__add-to-cart {
             display: inline-flex;
@@ -385,7 +390,7 @@
         .jokit-lf-hero__add-to-cart:hover {
             background: #E6C200;
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
         }
         
         /* Wave separator simplu */
@@ -1335,19 +1340,22 @@
                 
                 <!-- Purchase Options -->
                 <div class="jokit-lf-purchase-options">
-                    <!-- Option 1: 2x Same Game -->
+                    <!-- Option 1: 2x Same Game - BEST VALUE -->
                     <div class="jokit-lf-purchase-option selected" data-option="dublu">
-                        <span class="jokit-lf-purchase-option__badge">Popular</span>
+                        <span class="jokit-lf-purchase-option__badge jokit-lf-purchase-option__badge--best">Popular</span>
                         <div class="jokit-lf-purchase-option__header">
                             <div class="jokit-lf-purchase-option__radio"></div>
                             <span class="jokit-lf-purchase-option__title">2x Libertatea Financiară + Transport Gratuit</span>
                         </div>
                         <div class="jokit-lf-purchase-option__pricing">
                             <span class="jokit-lf-purchase-option__old-price">180,99 RON</span>
-                            <span class="jokit-lf-purchase-option__new-price">119,98 RON</span>
-                            <span class="jokit-lf-purchase-option__discount">-34%</span>
+                            <span class="jokit-lf-purchase-option__new-price">109,98 RON</span>
+                            <span class="jokit-lf-purchase-option__discount">-39%</span>
                         </div>
-                        <div class="jokit-lf-purchase-option__savings">Economisești 61,01 RON + Transport Gratuit</div>
+                        <div class="jokit-lf-purchase-option__savings">Economisești 71,01 RON + Transport Gratuit</div>
+                        <div class="jokit-lf-purchase-option__image">
+                            <img src="2x-libertatea-financiara.png" alt="2x Libertatea Financiară">
+                        </div>
                     </div>
                     
                     <!-- Option 2: Single Game -->
@@ -1362,24 +1370,31 @@
                             <span class="jokit-lf-purchase-option__discount">-34%</span>
                         </div>
                         <div class="jokit-lf-purchase-option__savings">Economisești 30,51 RON</div>
+                        <div class="jokit-lf-purchase-option__image">
+                            <img src="1x-libertatea-financiara.png" alt="1x Libertatea Financiară">
+                        </div>
                     </div>
                 </div>
                 
                 <div class="jokit-lf-hero__cta-row">
-                    <a class="jokit-lf-hero__add-to-cart btn btn-cmd add2cart add-2-cart btn-cart custom __retargetingAddToCartSelector -g-product-add-to-cart-6 -g-no-url" onclick="if(typeof $!=='undefined' && $.Gomag){$.Gomag.addToCart({'p': 6, 'l':'d'})}" href="#" data-id="6" rel="nofollow">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <path d="M16 10a4 4 0 0 1-8 0"></path>
-                        </svg>
-                        Adaugă în Coș
-                    </a>
-                    <a href="https://www.jokit.ro/tutorial-libertatea-financiara" class="jokit-lf-hero__tutorial-link" target="_blank">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                        </svg>
-                        Vezi Tutorialul
-                    </a>
+                    <!-- Add to Cart -->
+                    <div class="jokit-lf-hero__add-section add-section clearfix -g-product-add-section-6">
+                        <input type="hidden" name="quantity" id="quantity" value="1" data-id="6">
+                        <a class="jokit-lf-hero__add-to-cart btn btn-cmd add2cart add-2-cart btn-cart custom __retargetingAddToCartSelector -g-product-add-to-cart-6 -g-no-url" onclick="if(typeof $!=='undefined' && $.Gomag){$.Gomag.addToCart({'p': 6, 'l':'d'})}" href="#" data-id="6" rel="nofollow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            Adaugă în Coș
+                        </a>
+                        <a class="jokit-lf-hero__tutorial-btn" href="#" target="_blank">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                            Vezi Tutorialul
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1769,19 +1784,22 @@
             
             <!-- Opțiuni de Cumpărare -->
             <div class="jokit-lf-purchase-options jokit-lf-final-cta__options">
-                <!-- Option 1: 2x Same Game -->
+                <!-- Option 1: 2x Same Game - POPULAR -->
                 <div class="jokit-lf-purchase-option selected" data-option="dublu">
-                    <span class="jokit-lf-purchase-option__badge">Popular</span>
+                    <span class="jokit-lf-purchase-option__badge jokit-lf-purchase-option__badge--best">Popular</span>
                     <div class="jokit-lf-purchase-option__header">
                         <div class="jokit-lf-purchase-option__radio"></div>
                         <span class="jokit-lf-purchase-option__title">2x Libertatea Financiară + Transport Gratuit</span>
                     </div>
                     <div class="jokit-lf-purchase-option__pricing">
                         <span class="jokit-lf-purchase-option__old-price">180,99 RON</span>
-                        <span class="jokit-lf-purchase-option__new-price">119,98 RON</span>
-                        <span class="jokit-lf-purchase-option__discount">-34%</span>
+                        <span class="jokit-lf-purchase-option__new-price">109,98 RON</span>
+                        <span class="jokit-lf-purchase-option__discount">-39%</span>
                     </div>
-                    <div class="jokit-lf-purchase-option__savings">Economisești 61,01 RON + Transport Gratuit</div>
+                    <div class="jokit-lf-purchase-option__savings">Economisești 71,01 RON + Transport Gratuit</div>
+                    <div class="jokit-lf-purchase-option__image">
+                        <img src="2x-libertatea-financiara.png" alt="2x Libertatea Financiară">
+                    </div>
                 </div>
                 
                 <!-- Option 2: Single Game -->
@@ -1796,6 +1814,9 @@
                         <span class="jokit-lf-purchase-option__discount">-34%</span>
                     </div>
                     <div class="jokit-lf-purchase-option__savings">Economisești 30,51 RON</div>
+                    <div class="jokit-lf-purchase-option__image">
+                        <img src="1x-libertatea-financiara.png" alt="1x Libertatea Financiară">
+                    </div>
                 </div>
             </div>
             

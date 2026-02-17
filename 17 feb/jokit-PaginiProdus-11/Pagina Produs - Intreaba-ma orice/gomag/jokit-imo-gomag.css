@@ -183,7 +183,7 @@
    HERO WRAPPER WITH BACKGROUND
    ============================================ */
 .jokit-imo-hero-wrapper {
-    background: linear-gradient(90deg, #00ffed 0%, #00b8ba 100%);
+    background: linear-gradient(145deg, #1F959A 0%, #02555B 100%);
     position: relative;
     overflow: hidden;
 }
@@ -196,8 +196,9 @@
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 40%);
+        radial-gradient(ellipse at 30% 20%, rgba(231, 76, 60, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(255, 193, 7, 0.1) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 60%);
     z-index: 0;
 }
 
@@ -227,26 +228,26 @@
     justify-content: center;
 }
 
-/* Efect auriu în spate - strălucire principală */
+/* Efect în spate - umbră subtilă neagră */
 .jokit-imo-hero__product-image::before {
     content: '';
     position: absolute;
     width: 90%;
     height: 90%;
-    background: radial-gradient(ellipse, rgba(255, 215, 0, 0.6) 0%, rgba(255, 193, 7, 0.3) 40%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 40%, transparent 70%);
     border-radius: 50%;
     filter: blur(50px);
     animation: jokitGlow 3s ease-in-out infinite;
     z-index: 0;
 }
 
-/* Efect secundar - aureolă exterioară */
+/* Efect secundar - aureolă exterioară subtilă neagră */
 .jokit-imo-hero__product-image::after {
     content: '';
     position: absolute;
     width: 110%;
     height: 110%;
-    background: radial-gradient(ellipse, rgba(255, 215, 0, 0.25) 0%, rgba(255, 193, 7, 0.1) 50%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.06) 50%, transparent 70%);
     border-radius: 50%;
     filter: blur(80px);
     animation: jokitGlowOuter 4s ease-in-out infinite;
@@ -524,10 +525,16 @@
    ============================================ */
 .jokit-imo-purchase-options {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     margin-top: 24px;
     margin-bottom: 20px;
+    max-width: 900px;
+    align-items: stretch;
+}
+
+.jokit-imo-hero .jokit-imo-purchase-options {
+    max-width: 1000px;
 }
 
 .jokit-imo-purchase-option {
@@ -666,33 +673,37 @@
 .jokit-imo-purchase-option__pricing {
     display: flex;
     align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
+    gap: 6px;
+    flex-wrap: nowrap;
     padding-left: 28px;
 }
 
 .jokit-imo-purchase-option__old-price {
-    font-size: 12px;
+    font-size: 11px;
     color: rgba(255, 255, 255, 0.7);
     text-decoration: line-through;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
 }
 
 .jokit-imo-purchase-option__new-price {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     color: #FFD700;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
 }
 
 .jokit-imo-purchase-option__discount {
     background: #FF6B35;
     color: white;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 10px;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 8px;
     font-weight: 700;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .jokit-imo-purchase-option__savings {
@@ -702,6 +713,35 @@
     color: white;
     font-weight: 700;
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Product image in purchase option */
+.jokit-imo-purchase-option__product-image {
+    margin-top: auto;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.jokit-imo-purchase-option__product-image img {
+    width: 65px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.jokit-imo-purchase-option:hover .jokit-imo-purchase-option__product-image img {
+    transform: scale(1.08);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+}
+
+.jokit-imo-purchase-option.selected .jokit-imo-purchase-option__product-image img {
+    filter: drop-shadow(0 4px 12px rgba(255, 215, 0, 0.4));
 }
 
 /* CTA Row - în hero content */
@@ -728,14 +768,14 @@
     }
     
     .jokit-imo-purchase-option {
-        background: rgba(0, 0, 0, 0.3);
-        border: 2px solid rgba(0, 255, 237, 0.4);
+        background: rgba(255, 255, 255, 0.08);
+        border: 2px solid rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(10px);
     }
     
     .jokit-imo-purchase-option.selected {
-        background: rgba(0, 0, 0, 0.4);
-        border-color: #00ffed;
+        background: rgba(255, 215, 0, 0.15);
+        border-color: #FFD700;
     }
     
     .jokit-imo-purchase-option__title {
@@ -1101,7 +1141,15 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 20px;
+    margin-bottom: 6px;
+}
+
+.jokit-imo-section-card__badge-sub {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--jokit-imo-secondary);
+    opacity: 0.7;
+    margin-bottom: 16px;
 }
 
 .jokit-imo-section-card--parinti .jokit-imo-section-card__badge {
@@ -1604,8 +1652,9 @@
 
 /* Opțiuni în CTA Final */
 .jokit-imo-cta__options {
-    max-width: 900px;
+    max-width: 700px;
     margin: 0 auto 30px;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .jokit-imo-cta__btn {
@@ -1799,6 +1848,25 @@
         padding-left: 24px;
     }
     
+    /* Position image on the right side for mobile */
+    .jokit-imo-purchase-option--with-image {
+        position: relative;
+        padding-right: 70px;
+    }
+    
+    .jokit-imo-purchase-option__product-image {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: 0;
+    }
+    
+    .jokit-imo-purchase-option__product-image img {
+        width: 55px;
+        height: auto;
+    }
+    
     .jokit-imo-hero__add-to-cart {
         padding: 14px 30px;
         font-size: 16px;
@@ -1978,7 +2046,7 @@
 }
 
 .jokit-imo-lightbox__nav:hover {
-    background: #00ffed;
+    background: var(--jokit-imo-accent);
     transform: translateY(-50%) scale(1.1);
 }
 
@@ -1997,6 +2065,137 @@
 
 .jokit-imo-gallery__slide:hover img {
     transform: scale(1.02);
+}
+
+/* ============================================
+   TUTORIAL LINK
+   ============================================ */
+.jokit-imo-hero__tutorial-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.jokit-imo-hero__tutorial-link:hover {
+    color: #FFD700;
+    background: rgba(255, 215, 0, 0.15);
+    border-color: rgba(255, 215, 0, 0.4);
+}
+
+.jokit-imo-hero__tutorial-link svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+    stroke: none;
+}
+
+/* ============================================
+   VIDEO MODAL
+   ============================================ */
+.jokit-imo-video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.jokit-imo-video-modal.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.jokit-imo-video-modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+}
+
+.jokit-imo-video-modal__container {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    z-index: 1;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.jokit-imo-video-modal.is-active .jokit-imo-video-modal__container {
+    transform: scale(1);
+}
+
+.jokit-imo-video-modal__content {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+}
+
+.jokit-imo-video-modal__content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.jokit-imo-video-modal__close {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.jokit-imo-video-modal__close:hover {
+    background: #E74C3C;
+    transform: rotate(90deg);
+}
+
+/* Responsive video modal */
+@media (max-width: 768px) {
+    .jokit-imo-video-modal__container {
+        width: 95%;
+    }
+    
+    .jokit-imo-video-modal__close {
+        top: -40px;
+        right: 5px;
+    }
+    
+    .jokit-imo-hero__tutorial-link {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
 }
 
 /* ============================================
